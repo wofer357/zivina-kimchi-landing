@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimchi od Živiny | Probiotika, imunita a chuť v jednom</title>
+    <meta name="description" content="Živé probiotika, 50 % denní dávky vitamínu C a 2 000 let tradice. Nepasterizované kimchi z české dílny — pro vaše střeva, imunitu i náladu.">
+    <style>
+        @font-face {
+            font-family: 'Albra';
+            src: url('fonts/1AlbraBold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Albra';
+            src: url('fonts/1AlbraBlack.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: italic;
+            font-display: swap;
+        }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --cream: #FBF6F0;
+            --cream-dark: #F3EDE5;
+            --pink: #d63370;
+            --pink-hover: #b82a60;
+            --pink-light: #f3c7c6;
+            --green: #008566;
+            --gold-star: #f0b852;
+            --red: #cd171a;
+            --gray: #6b6b6b;
+            --gray-light: #999;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Albra', Georgia, 'Times New Roman', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--black);
+            background: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Top bar ── */
+        .top-bar {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .top-bar strong { color: var(--pink); }
+
+        /* ── Header ── */
+        .header {
+            background: var(--white);
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e2da;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: inline-block;
+            text-decoration: none;
+        }
+        .logo img {
+            display: block;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .header-nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover { color: var(--pink); }
+        .header-cta {
+            background: var(--pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-family: var(--font-body);
+        }
+        .header-cta:hover { background: var(--pink-hover); }
+
+        /* ── Hero ── */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--pink-light);
+            color: var(--pink);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 100px;
+            width: fit-content;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--pink);
+        }
+        .hero-desc {
+            font-size: 17px;
+            color: var(--gray);
+            max-width: 480px;
+            margin-bottom: 36px;
+            line-height: 1.75;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .btn-pink {
+            background: var(--pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-pink:hover {
+            background: var(--pink-hover);
+            transform: translateY(-1px);
+        }
+        .btn-black {
+            background: var(--black);
+            color: var(--white);
+            font-weight: 700;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-black:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            color: var(--black);
+            font-weight: 600;
+            padding: 16px 28px;
+            border: 2px solid var(--black);
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: transparent;
+            font-family: var(--font-body);
+        }
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        .hero-image {
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #e0d8ce;
+        }
+        .hero-stat strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 800;
+        }
+        .hero-stat span {
+            font-size: 13px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hero-microcopy { font-size: 12px; color: var(--gray-light); margin-top: 16px; }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px 40px;
+            background: var(--green);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        .trust-item { display: flex; align-items: center; gap: 6px; }
+        .trust-icon { font-size: 16px; }
+
+        /* ── Section base ── */
+        .section {
+            padding: 100px 80px;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .section-title em {
+            font-style: italic;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ── Benefits Grid ── */
+        .benefits-section {
+            background: var(--white);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .benefit-card {
+            background: var(--cream);
+            padding: 36px 28px;
+            border-radius: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+        }
+        .benefit-card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--pink-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .benefit-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .benefit-card .benefit-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--pink);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+        .benefit-card .benefit-link:hover {
+            gap: 8px;
+        }
+
+        /* ── Infographic ── */
+        .infographic-section {
+            background: var(--cream);
+            text-align: center;
+        }
+        .infographic-section img {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        /* ── USP strip ── */
+        .usp-strip {
+            background: var(--white);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border-top: 1px solid #e8e2da;
+            border-bottom: 1px solid #e8e2da;
+        }
+        .usp-item {
+            padding: 40px 20px;
+            text-align: center;
+            border-right: 1px solid #e8e2da;
+        }
+        .usp-item:last-child { border-right: none; }
+        .usp-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .usp-item h3 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .usp-item p {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* ── Video Section ── */
+        .video-section { background: var(--white); }
+        .video-container {
+            max-width: 960px; margin: 0 auto;
+        }
+        .video-wrapper {
+            position: relative; width: 100%;
+            padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* ── Products ── */
+        .products-section {
+            background: var(--cream);
+        }
+        .products-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        .products-grid {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .products-grid::-webkit-scrollbar { display: none; }
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 280px;
+            max-width: 300px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .carousel-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--black);
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .carousel-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .carousel-dot.active {
+            background: var(--pink);
+            transform: scale(1.2);
+        }
+        .product-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: var(--white);
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+        .product-info {
+            padding: 20px 24px 24px;
+        }
+        .product-stars {
+            color: var(--gold-star);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .product-stars span {
+            color: var(--gray-light);
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        .product-info h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .product-info .desc {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .product-stock {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .product-price sup {
+            font-size: 13px;
+            font-weight: 700;
+            position: relative;
+            top: -4px;
+        }
+        .product-price small {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-light);
+        }
+        .btn-cart {
+            background: var(--pink);
+            color: var(--white);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-cart:hover { background: var(--pink-hover); }
+
+        /* ── Bundles ── */
+        .bundles-section {
+            background: var(--cream);
+        }
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .bundle-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .bundle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+        }
+        .bundle-card.featured {
+            border: 2px solid var(--pink);
+        }
+        .bundle-card.featured::before {
+            content: 'Nejoblíbenější';
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--pink);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .bundle-img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+        .bundle-card h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .bundle-card .bundle-desc {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .bundle-price {
+            margin-bottom: 24px;
+        }
+        .bundle-price .original {
+            font-size: 16px;
+            color: var(--gray-light);
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+        .bundle-price .sale {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            font-weight: 800;
+        }
+        .bundle-price small {
+            display: block;
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .bundle-urgency {
+            font-size: 12px; color: var(--red); font-weight: 700;
+            margin-bottom: 16px; display: flex; align-items: center;
+            justify-content: center; gap: 4px;
+        }
+
+        /* ── FAQ ── */
+        .faq-section { background: var(--white); }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #e0d8ce; }
+        .faq-item summary {
+            font-family: var(--font-heading); font-size: 18px; font-weight: 700;
+            padding: 24px 0; cursor: pointer; list-style: none;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-item summary::after { content: '+'; font-size: 24px; font-weight: 300; color: var(--pink); }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item p { font-size: 15px; color: var(--gray); line-height: 1.7; padding: 0 0 24px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        /* ── About / Story ── */
+        .story-section {
+            background: var(--cream);
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .story-content h2 {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .story-content p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .story-content p strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+        .story-content .btn-black { margin-top: 16px; }
+        .story-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .team-img {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* ── CTA Section ── */
+        .cta-section {
+            background: var(--pink-light);
+            text-align: center;
+            padding: 100px 80px;
+            position: relative;
+        }
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 36px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .guarantee-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 24px; font-size: 13px; color: var(--gray); font-weight: 500;
+        }
+        .email-capture { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .email-capture-label { font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--black); }
+        .email-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+        .email-input {
+            flex: 1; padding: 14px 20px; border: 2px solid #e0d8ce;
+            border-radius: 6px; font-size: 15px; font-family: var(--font-body); background: var(--white);
+        }
+        .email-input:focus { outline: none; border-color: var(--pink); }
+        .email-note { font-size: 12px; color: var(--gray-light); margin-top: 10px; }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 80px 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-logo {
+            display: inline-block;
+            margin-bottom: 16px;
+            text-decoration: none;
+        }
+        .footer-brand p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer h4 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .footer ul li a:hover { color: var(--white); }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ── Mobile Sticky CTA ── */
+        .mobile-sticky-cta {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            padding: 12px 20px; background: var(--white);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 99;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content { padding: 60px 40px; }
+            .hero h1 { font-size: 42px; }
+            .hero-image { height: 400px; padding: 24px; }
+            .usp-strip { grid-template-columns: repeat(3, 1fr); }
+            .section { padding: 80px 40px; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .bundles-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-bar { gap: 20px; padding: 14px 20px; }
+        }
+
+        @media (max-width: 640px) {
+            .top-bar { font-size: 11px; }
+            .header { padding: 12px 20px; }
+            .header-nav { display: none; }
+            .hero-content { padding: 40px 20px; }
+            .hero h1 { font-size: 30px; }
+            .hero-desc { font-size: 15px; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .btn-pink, .btn-outline { text-align: center; justify-content: center; }
+            .hero-stats { gap: 20px; }
+            .hero-stat strong { font-size: 22px; }
+            .usp-strip { grid-template-columns: 1fr; }
+            .usp-item { border-right: none; border-bottom: 1px solid #e8e2da; }
+            .section { padding: 60px 20px; }
+            .section-title { font-size: 28px; }
+            .benefits-grid, .bundles-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card { min-width: 260px; }
+            .story-photo { margin-top: 20px; }
+            .cta-section { padding: 60px 20px; }
+            .cta-section h2 { font-size: 28px; }
+            .footer { padding: 40px 20px 24px; padding-bottom: 80px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .mobile-sticky-cta { display: block; }
+            .trust-bar { gap: 12px; font-size: 12px; padding: 12px 16px; }
+            .email-form { flex-direction: column; }
+            .hero-image { height: auto; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    &#x1F9EA; Živé probiotika v&nbsp;každé skleničce &mdash; <strong>nepasterizované</strong> &nbsp;|&nbsp; Doprava zdarma od <strong>1 500 Kč</strong>
+</div>
+
+<!-- Header -->
+<header class="header">
+    <a href="https://www.zivina.cz" class="logo"><img src="logo-zivina.svg" alt="Živina" height="40"></a>
+    <nav class="header-nav">
+        <a href="#benefity">Proč kimchi?</a>
+        <a href="#produkty">Produkty</a>
+        <a href="#faq">Časté dotazy</a>
+        <a href="https://www.zivina.cz/kimchi/" class="header-cta">DO KOŠÍKU &rarr;</a>
+    </nav>
+</header>
+
+<!-- Hero — Benefit-led -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">&#x1F9EC; Zdraví začíná ve střevech</div>
+        <h1>Váš mikrobiom si zaslouží to&nbsp;<em>nejlepší.</em></h1>
+        <p class="hero-desc">Až 80&nbsp;% imunitní odpovědi vzniká ve střevech. Kimchi od Živiny je plné živých probiotik, vitamínů a&nbsp;antioxidantů — bez pasterizace, bez kompromisů.</p>
+        <div class="hero-buttons">
+            <a href="#benefity" class="btn-pink">ZJISTĚTE PROČ &darr;</a>
+            <a href="#produkty" class="btn-outline">Rovnou k&nbsp;produktům</a>
+        </div>
+        <p class="hero-microcopy">&#x2705; Nepasterizované &nbsp;&bull;&nbsp; &#x2705; Česká ruční výroba &nbsp;&bull;&nbsp; &#x2705; Doručení v&nbsp;chladu</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>2 000+</strong>
+                <span>let tradice</span>
+            </div>
+            <div class="hero-stat">
+                <strong>Top 5</strong>
+                <span>nejzdravějších jídel</span>
+            </div>
+            <div class="hero-stat">
+                <strong>50 %+</strong>
+                <span>denní dávky vit. C</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="images/kimchi infografika.webp" alt="Kimchi infografika — probiotika, imunita, trávení, srdce, hubnutí">
+    </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+    <div class="trust-item"><span class="trust-icon">&#x1F9EA;</span><span>Živé probiotika</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F1E8;&#x1F1FF;</span><span>Vyrobeno v&nbsp;Česku</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F6E1;&#xFE0F;</span><span>Nepasterizované</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x2744;&#xFE0F;</span><span>Chlazená přeprava</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F331;</span><span>100% rostlinné</span></div>
+</section>
+
+<!-- Benefits Grid — "Proč je kimchi superfood?" -->
+<section class="section benefits-section" id="benefity">
+    <div class="section-header">
+        <h2 class="section-title">Proč je kimchi <em>superfood?</em></h2>
+        <p class="section-subtitle">Jedno z&nbsp;5 nejzdravějších jídel světa podle Health Magazine. Více než 2&nbsp;000 let tradice — a&nbsp;věda mu dává za pravdu.</p>
+    </div>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x1F9EC;</div>
+            <h3>Živé probiotika</h3>
+            <p>Bakterie Lactobacillus v&nbsp;kimchi podporují rovnováhu střevní mikroflóry. Naše kimchi je nepasterizované — probiotika jsou skutečně živá.</p>
+            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x1F6E1;&#xFE0F;</div>
+            <h3>Silnější imunita</h3>
+            <p>Až 80&nbsp;% imunitní odpovědi vzniká ve střevech. Probiotika podporují funkci imunitních buněk a&nbsp;mohou snižovat zánětlivé procesy v&nbsp;těle.</p>
+            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x1F34B;</div>
+            <h3>Vitamín C a&nbsp;antioxidanty</h3>
+            <p>100&nbsp;g kimchi obsahuje více než 50&nbsp;% doporučené denní dávky vitamínu C. Navíc je plné antioxidantů, které chrání buňky před poškozením.</p>
+            <a href="https://www.zivina.cz/blog/kimchi-co-to-je-a-proc-ho-jist/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x2764;&#xFE0F;</div>
+            <h3>Zdravé srdce</h3>
+            <p>Fermentované potraviny mají protizánětlivé vlastnosti. Bioaktivní sloučeniny v&nbsp;kimchi přispívají ke snížení zánětů, které jsou rizikovým faktorem srdečních onemocnění.</p>
+            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x1F9E0;</div>
+            <h3>Lepší nálada</h3>
+            <p>Osa střeva-mozek je skutečná. Výzkumy ukazují, že probiotika mohou pozitivně ovlivnit psychickou pohodu a&nbsp;snížit riziko depresivních stavů.</p>
+            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-card-icon">&#x2696;&#xFE0F;</div>
+            <h3>Podpora hubnutí</h3>
+            <p>Pouhých 26 kcal na 100 g, plné vlákniny a&nbsp;fermentačních enzymů. Kimchi pomáhá trávení a&nbsp;je ideální součástí vyváženého jídelníčku.</p>
+            <a href="https://www.zivina.cz/blog/kimchi-co-to-je-a-proc-ho-jist/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- Infographic -->
+<section class="section infographic-section">
+    <div class="section-header">
+        <h2 class="section-title">Co všechno kimchi <em>dokáže?</em></h2>
+        <p class="section-subtitle">Jeden produkt, pět přínosů pro vaše zdraví. A&nbsp;to vše v&nbsp;jedné skleničce.</p>
+    </div>
+    <img src="images/kimchi infografika.webp" alt="Infografika: Kimchi nakopává imunitní systém, podporuje hubnutí, pomáhá při trávení, udržuje zdravé srdce, plné antioxidantů a probiotik" loading="lazy">
+</section>
+
+<!-- USP Strip — "Proč Živina?" -->
+<section class="usp-strip">
+    <div class="usp-item">
+        <div class="usp-icon">&#x1F9EA;</div>
+        <h3>Nepasterizované</h3>
+        <p>Živé kultury v&nbsp;každé skleničce</p>
+    </div>
+    <div class="usp-item">
+        <div class="usp-icon">&#x1F1E8;&#x1F1FF;</div>
+        <h3>Česká ruční výroba</h3>
+        <p>Vysoký podíl ruční práce</p>
+    </div>
+    <div class="usp-item">
+        <div class="usp-icon">&#x1F6E1;&#xFE0F;</div>
+        <h3>Bez umělých přísad</h3>
+        <p>Bez konzervantů a&nbsp;barviv</p>
+    </div>
+    <div class="usp-item">
+        <div class="usp-icon">&#x1F331;</div>
+        <h3>100% rostlinné</h3>
+        <p>Vegan friendly</p>
+    </div>
+    <div class="usp-item">
+        <div class="usp-icon">&#x2744;&#xFE0F;</div>
+        <h3>Chlazená přeprava</h3>
+        <p>Probiotika dorazí živá</p>
+    </div>
+</section>
+
+<!-- Video -->
+<section class="section video-section">
+    <div class="section-header">
+        <h2 class="section-title">Jak vypadá <em>poctivé kimchi?</em></h2>
+        <p class="section-subtitle">Podívejte se, jak naše kimchi vzniká — od čerstvé zeleniny až po skleničku.</p>
+    </div>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/MtgKo9ZtIz8" title="Živina: Jak vypadá poctivé Kimchi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Products (no spiciness tags, WebP images) -->
+<section class="section products-section" id="produkty">
+    <div class="section-header">
+        <h2 class="section-title">Vyberte si <em>svou chuť</em></h2>
+        <p class="section-subtitle">6 variant — od jemné po pálivou. Každá plná živých probiotik.</p>
+    </div>
+
+    <div class="products-carousel-wrapper">
+    <div class="products-grid" id="productsCarousel">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_neaplive fb.webp" alt="Kimchi Nepálivé" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(8x)</span></div>
+                <h3>Kimchi Nepálivé</h3>
+                <p class="desc">Ideální pro rodiny s&nbsp;dětmi. Všechna probiotika, žádné slzy.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-nepalive-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_stredne fb.webp" alt="Kimchi Natur" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(12x)</span></div>
+                <h3>Kimchi Natur</h3>
+                <p class="desc">Křupavý salát s&nbsp;charakteristickou kyselostí a&nbsp;střední pálivostí.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-natur-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_palive fb.webp" alt="Kimchi Pálivé" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(15x)</span></div>
+                <h3>Kimchi Pálivé</h3>
+                <p class="desc">Pro milovníky ostrého. S&nbsp;pravým korejským Gochugaru chilli.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-palive-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_fenykl fb.webp" alt="Kimchi Fenykl" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(5x)</span></div>
+                <h3>Kimchi Fenykl</h3>
+                <p class="desc">Středně pálivá varianta s&nbsp;fenyklem. Komplexní chuť pro gurmány.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-fenykl-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_jidas fb.webp" alt="Kimchi Jidášovo ucho" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(3x)</span></div>
+                <h3>Kimchi Jidášovo ucho</h3>
+                <p class="desc">Nepálivá varianta s&nbsp;jidášovým uchem. Unikátní umami chuť.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">249<sup>,90</sup> Kč <small>/ 400g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-jidasovo-ucho-400-g/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/carousel_shiitake fb.webp" alt="Kimchi Shiitake" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(3x)</span></div>
+                <h3>Kimchi Shiitake</h3>
+                <p class="desc">Nepálivá varianta s&nbsp;houbou shiitake. Plná umami chuť.</p>
+                <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
+                <div class="product-bottom">
+                    <div class="product-price">249<sup>,90</sup> Kč <small>/ 400g</small></div>
+                    <a href="https://www.zivina.cz/kimchi-shiitake-400-g/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-nav">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Předchozí">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="carouselNext" aria-label="Další">&#8594;</button>
+    </div>
+    </div>
+</section>
+
+<!-- Bundles -->
+<section class="section bundles-section" id="balicky">
+    <div class="section-header">
+        <h2 class="section-title">Výhodné <em>balíčky</em></h2>
+        <p class="section-subtitle">Nevíte, jakou chuť si vybrat? Zkuste rovnou víc variant a&nbsp;ušetřete.</p>
+    </div>
+
+    <div class="bundles-grid">
+        <div class="bundle-card">
+            <img class="bundle-img" src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/shop/orig/284-1_239-kimchi-mix-kilo-a-pul-001-zivina-1680x1680-amber.jpg?6908dcfe" alt="Kilo a půl Mix" loading="lazy">
+            <h3>Kilo a&nbsp;půl Mix</h3>
+            <p class="bundle-desc">3 &times; 500g kimchi v&nbsp;různých příchutích. Ideální na rozkoukání.</p>
+            <div class="bundle-price">
+                <span class="original">749 Kč</span>
+                <span class="sale">674,90 Kč</span>
+                <small>Ušetříte 74 Kč</small>
+            </div>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
+        </div>
+
+        <div class="bundle-card featured">
+            <div class="bundle-urgency">&#x23F3; Akční cena platí jen tento týden</div>
+            <img class="bundle-img" src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/shop/orig/86-1_86-sesty-smysl-001-zivina-1680x1680-amber.jpg?6908dc6d" alt="Šestý smysl" loading="lazy">
+            <h3>Šestý smysl</h3>
+            <p class="bundle-desc">6 kimchi ve všech variantách. Pro začátečníky, co chtějí ochutnat všechno.</p>
+            <div class="bundle-price">
+                <span class="original">1 019 Kč</span>
+                <span class="sale">917,90 Kč</span>
+                <small>Ušetříte 101 Kč</small>
+            </div>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
+        </div>
+
+        <div class="bundle-card">
+            <img class="bundle-img" src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/shop/orig/762-1_735-naloz-probiotik-001-zivina-1680x1680-amber.jpg?6908dd43" alt="Nálož probiotik" loading="lazy">
+            <h3>Nálož probiotik</h3>
+            <p class="bundle-desc">2 &times; Kimchi Natur + jablečný ocet. Fermentovaná kombo pro zdraví.</p>
+            <div class="bundle-price">
+                <span class="original">700 Kč</span>
+                <span class="sale">629,90 Kč</span>
+                <small>Ušetříte 70 Kč</small>
+            </div>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="section-header">
+        <h2 class="section-title">Časté <em>dotazy</em></h2>
+    </div>
+    <div class="faq-list">
+        <details class="faq-item">
+            <summary>Kolik kimchi bych měl/a jíst denně?</summary>
+            <p>Doporučujeme začít s&nbsp;jednou až dvěma lžícemi denně (cca 30–50 g) a&nbsp;postupně zvyšovat. Korejci sní v&nbsp;průměru 18 kg kimchi ročně — to je asi 50 g denně. Pravidelná malá porce je lepší než občasná velká.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Jsou probiotika v&nbsp;kimchi skutečně živá?</summary>
+            <p>Ano! Na rozdíl od většiny průmyslově vyráběných kimchi na trhu je to naše <strong>nepasterizované</strong>. Pasterizace zabíjí probiotické bakterie. Naše kimchi obsahuje živé kultury Lactobacillus po celou dobu trvanlivosti — proto ho posíláme v&nbsp;chladu.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Jak kimchi chutná?</summary>
+            <p>Kimchi má výraznou, pikantní a&nbsp;lehce kyselou chuť s&nbsp;umami tóny. Každá varianta je jiná — Natur je jemně kyselé a&nbsp;křupavé, Pálivé má říz díky korejskému Gochugaru, Nepálivé je ideální pro rodiny s&nbsp;dětmi. Nejlepší způsob, jak zjistit svou oblíbenou, je ochutnat!</p>
+        </details>
+        <details class="faq-item">
+            <summary>Je kimchi bezpečné pro děti?</summary>
+            <p>Ano! Speciálně pro rodiny nabízíme variantu Kimchi Nepálivé, která neobsahuje žádné chilli. Má stejné probiotické přínosy, jen bez pálivosti. Děti ho milují jako zdravou svačinku nebo přílohu.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Jak dlouho kimchi vydrží?</summary>
+            <p>Naše kimchi má trvanlivost minimálně 6 měsíců od data výroby při skladování v&nbsp;lednici (do 8 °C). Po otevření doporučujeme spotřebovat do 4 týdnů, ale díky přirozené fermentaci se nekazí — jen postupně mění chuť.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Jak funguje doručení v&nbsp;chladu?</summary>
+            <p>Kimchi balíme s&nbsp;chladicími gely a&nbsp;izolačním obalem, aby probiotika zůstala živá během přepravy. Odesíláme do 24 hodin od objednání. Doprava zdarma při objednávce nad 1 500 Kč.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Je kimchi opravdu zdravé?</summary>
+            <p>Rozhodně! Kimchi bylo zařazeno mezi 5 nejzdravějších potravin na světě. Je plné probiotik (Lactobacillus), vitamínů C a&nbsp;B, antioxidantů a&nbsp;vlákniny. Má pouhých 26 kcal na 100 g a&nbsp;pozitivně ovlivňuje trávení, imunitu i&nbsp;náladu přes osu střeva-mozek.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Co když mi kimchi nechutná?</summary>
+            <p>Neotevřené kimchi v&nbsp;původním obalu můžete vrátit do 14 dnů od doručení. Pokud máte s&nbsp;produktem jakýkoli problém, neváhejte nás kontaktovat — rádi vám poradíme s&nbsp;výběrem varianty, která vám bude sedět.</p>
+        </details>
+    </div>
+</section>
+
+<!-- Story Section -->
+<section class="section story-section">
+    <div class="story-grid">
+        <div class="story-content">
+            <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
+            <h2>S chutí jde všechno líp</h2>
+            <p>V Živině propojujeme špičkovou gastronomii se <strong>snadnou a&nbsp;rychlou přípravou jídel</strong> v&nbsp;pohodlí vašeho domova, abyste mohli více společných chvil trávit u&nbsp;stolu místo u&nbsp;plotny.</p>
+            <p>A s&nbsp;našimi skleničkami se nám to daří. Sázíme u&nbsp;nich na autentickou chuť, přírodní suroviny a&nbsp;poctivou českou výrobu. <strong>Mňam!</strong></p>
+            <a href="https://www.zivina.cz/o-nas/" class="btn-black">NÁŠ PŘÍBĚH</a>
+        </div>
+        <div class="story-photo">
+            <img src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/documents/igt_assets/images/our_story/our_team.jpg" alt="Tým Živina" class="team-img" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
+    <h2>Dejte svým střevům to, co potřebují.</h2>
+    <p>Živé probiotika, vitamíny a&nbsp;2 000 let korejské tradice — v&nbsp;jedné české skleničce.<br>Doručení v&nbsp;chladu po celé ČR.</p>
+    <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="padding: 18px 44px; font-size: 16px; display: inline-block; margin-bottom: 20px;">CHCI OCHUTNAT &rarr;</a>
+    <br>
+    <div class="guarantee-badge">&#x2744;&#xFE0F; Chlazená přeprava &bull; Nepasterizované &bull; Český výrobek</div>
+
+    <div class="email-capture">
+        <div class="email-capture-label">&#x1F381; Chcete 10% slevu na první objednávku?</div>
+        <form class="email-form" action="#" method="post">
+            <input type="email" class="email-input" placeholder="vas@email.cz" required>
+            <button type="submit" class="btn-pink" style="white-space: nowrap;">CHCI SLEVU</button>
+        </form>
+        <p class="email-note">Žádný spam. Odhlášení jedním klikem.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <span class="footer-logo"><img src="logo-zivina.svg" alt="Živina" style="height: 40px;"></span>
+            <p>Fermentované potraviny pro zdravější život. Lokální výroba v&nbsp;České republice s&nbsp;láskou k&nbsp;poctivým postupům.</p>
+        </div>
+        <div>
+            <h4>Produkty</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/kimchi/">Kimchi</a></li>
+                <li><a href="https://www.zivina.cz/">Kombucha</a></li>
+                <li><a href="https://www.zivina.cz/">Omáčky</a></li>
+                <li><a href="https://www.zivina.cz/">Všechny produkty</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Info</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/o-nas/">O nás</a></li>
+                <li><a href="https://www.zivina.cz/blog/">Blog</a></li>
+                <li><a href="https://www.zivina.cz/">Recepty</a></li>
+                <li><a href="https://www.zivina.cz/">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Zákaznický servis</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/">Doprava a&nbsp;platba</a></li>
+                <li><a href="https://www.zivina.cz/">Obchodní podmínky</a></li>
+                <li><a href="https://www.zivina.cz/">Reklamace</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Živina. Všechna práva vyhrazena.</span>
+        <span>Každým soustem zdravější.</span>
+    </div>
+</footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width: 100%; justify-content: center; padding: 14px 24px; font-size: 15px;">CHCI OCHUTNAT &rarr;</a>
+</div>
+
+<script>
+(function() {
+    const carousel = document.getElementById('productsCarousel');
+    const cards = carousel.querySelectorAll('.product-card');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let current = 0;
+
+    cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Produkt ' + (i + 1));
+        dot.addEventListener('click', () => scrollTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function scrollTo(index) {
+        current = Math.max(0, Math.min(index, cards.length - 1));
+        cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        updateDots();
+    }
+
+    function updateDots() {
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === current);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => scrollTo(current - 1));
+    nextBtn.addEventListener('click', () => scrollTo(current + 1));
+
+    carousel.addEventListener('scroll', () => {
+        const scrollLeft = carousel.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 24;
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        if (newIndex !== current) {
+            current = newIndex;
+            updateDots();
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
