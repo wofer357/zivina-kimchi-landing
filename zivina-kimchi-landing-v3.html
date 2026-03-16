@@ -737,6 +737,49 @@
             object-fit: cover;
         }
 
+        /* ── Testimonials ── */
+        .testimonials-section {
+            background: var(--white);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial {
+            padding: 32px;
+            background: var(--cream);
+            border-radius: 16px;
+        }
+        .testimonial-stars {
+            color: var(--gold-star);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        .testimonial p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .testimonial-author span {
+            font-weight: 400;
+            color: var(--gray-light);
+        }
+        .testimonial-footer { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--pink-light); color: var(--pink);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 14px; flex-shrink: 0;
+        }
+        .testimonial-verified { font-size: 11px; color: var(--green); font-weight: 600; margin-top: 2px; }
+
         /* ── CTA Section ── */
         .cta-section {
             background: var(--pink-light);
@@ -836,7 +879,7 @@
             .usp-strip { grid-template-columns: repeat(3, 1fr); }
             .section { padding: 80px 40px; }
             .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-            .bundles-grid { grid-template-columns: repeat(2, 1fr); }
+            .bundles-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
             .story-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
             .trust-bar { gap: 20px; padding: 14px 20px; }
@@ -857,7 +900,7 @@
             .usp-item { border-right: none; border-bottom: 1px solid #e8e2da; }
             .section { padding: 60px 20px; }
             .section-title { font-size: 28px; }
-            .benefits-grid, .bundles-grid {
+            .benefits-grid, .bundles-grid, .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             .product-card { min-width: 260px; }
@@ -897,12 +940,12 @@
     <div class="hero-content">
         <div class="hero-badge">&#x1F9EC; Zdraví začíná ve střevech</div>
         <h1>Váš mikrobiom si zaslouží to&nbsp;<em>nejlepší.</em></h1>
-        <p class="hero-desc">Až 80&nbsp;% imunitní odpovědi vzniká ve střevech. Kimchi od Živiny je plné živých probiotik, vitamínů a&nbsp;antioxidantů — bez pasterizace, bez kompromisů.</p>
+        <p class="hero-desc">Až 80&nbsp;% vaší imunity se tvoří ve střevech. Kimchi od Živiny je plné živých probiotik, vitamínů a&nbsp;antioxidantů — bez pasterizace, bez kompromisů.</p>
         <div class="hero-buttons">
             <a href="#benefity" class="btn-pink">ZJISTĚTE PROČ &darr;</a>
             <a href="#produkty" class="btn-outline">Rovnou k&nbsp;produktům</a>
         </div>
-        <p class="hero-microcopy">&#x2705; Nepasterizované &nbsp;&bull;&nbsp; &#x2705; Česká ruční výroba &nbsp;&bull;&nbsp; &#x2705; Doručení v&nbsp;chladu</p>
+        <p class="hero-microcopy">&#x2705; Nepasterizované &nbsp;&bull;&nbsp; &#x2705; Vyrobeno v&nbsp;Česku &nbsp;&bull;&nbsp; &#x2705; Chlazená přeprava</p>
         <div class="hero-stats">
             <div class="hero-stat">
                 <strong>2 000+</strong>
@@ -927,7 +970,7 @@
 <section class="trust-bar">
     <div class="trust-item"><span class="trust-icon">&#x1F9EA;</span><span>Živé probiotika</span></div>
     <div class="trust-item"><span class="trust-icon">&#x1F1E8;&#x1F1FF;</span><span>Vyrobeno v&nbsp;Česku</span></div>
-    <div class="trust-item"><span class="trust-icon">&#x1F6E1;&#xFE0F;</span><span>Nepasterizované</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F6E1;&#xFE0F;</span><span>Bez konzervantů</span></div>
     <div class="trust-item"><span class="trust-icon">&#x2744;&#xFE0F;</span><span>Chlazená přeprava</span></div>
     <div class="trust-item"><span class="trust-icon">&#x1F331;</span><span>100% rostlinné</span></div>
 </section>
@@ -950,7 +993,7 @@
         <div class="benefit-card">
             <div class="benefit-card-icon">&#x1F6E1;&#xFE0F;</div>
             <h3>Silnější imunita</h3>
-            <p>Až 80&nbsp;% imunitní odpovědi vzniká ve střevech. Probiotika podporují funkci imunitních buněk a&nbsp;mohou snižovat zánětlivé procesy v&nbsp;těle.</p>
+            <p>Až 80&nbsp;% vaší imunity se tvoří ve střevech. Probiotika podporují funkci imunitních buněk a&nbsp;mohou snižovat zánětlivé procesy v&nbsp;těle.</p>
             <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
         </div>
 
@@ -1002,8 +1045,8 @@
     </div>
     <div class="usp-item">
         <div class="usp-icon">&#x1F1E8;&#x1F1FF;</div>
-        <h3>Česká ruční výroba</h3>
-        <p>Vysoký podíl ruční práce</p>
+        <h3>Vyrobeno v&nbsp;Česku</h3>
+        <p>Lokální výroba, české suroviny</p>
     </div>
     <div class="usp-item">
         <div class="usp-icon">&#x1F6E1;&#xFE0F;</div>
@@ -1195,6 +1238,48 @@
     </div>
 </section>
 
+<!-- Testimonials -->
+<section class="section testimonials-section">
+    <div class="section-header">
+        <h2 class="section-title">Co říkají <em>naši zákazníci</em></h2>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Konečně pořádné kimchi v&nbsp;Česku! Natur varianta je naprosto dokonalá. Křupavé, kyselé a&nbsp;s tou správnou štiplavostí. Objednávám pravidelně.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">MK</div>
+                <div>
+                    <div class="testimonial-author">Markéta K. <span>| Praha</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Nepálivé kimchi zbožňují i&nbsp;naše děti. Konečně zdravá svačinka, o&nbsp;kterou se nemusím hádat. Chlazená přeprava funguje skvěle.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">TR</div>
+                <div>
+                    <div class="testimonial-author">Tomáš R. <span>| Brno</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Jako fanoušek korejské kuchyně jsem skeptický vůči českým produktům. Živina mě ale mile překvapila. Pálivé kimchi má správný říz!</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">JS</div>
+                <div>
+                    <div class="testimonial-author">Jana S. <span>| Olomouc</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- FAQ -->
 <section class="section faq-section" id="faq">
     <div class="section-header">
@@ -1256,7 +1341,7 @@
 <section class="cta-section">
     <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
     <h2>Dejte svým střevům to, co potřebují.</h2>
-    <p>Živé probiotika, vitamíny a&nbsp;2 000 let korejské tradice — v&nbsp;jedné české skleničce.<br>Doručení v&nbsp;chladu po celé ČR.</p>
+    <p>Živé probiotika, vitamíny a&nbsp;2 000 let korejské tradice — v&nbsp;jedné české skleničce.<br>Chlazená přeprava po celé ČR.</p>
     <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="padding: 18px 44px; font-size: 16px; display: inline-block; margin-bottom: 20px;">CHCI OCHUTNAT &rarr;</a>
     <br>
     <div class="guarantee-badge">&#x2744;&#xFE0F; Chlazená přeprava &bull; Nepasterizované &bull; Český výrobek</div>
