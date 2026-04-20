@@ -3,3 +3,11 @@ node_modules/
 *.pem
 *.p8
 .DS_Store
+
+# Source / working files (not for deployment)
+BrandBookZivina_*.pdf
+brand-book.txt
+medvedi cesnek/
+v3-deploy/
+worktrees/
+.claude/

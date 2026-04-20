@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
-    <title>Kimchi od Živiny | Probiotika, imunita a chuť v jednom</title>
-    <meta name="description" content="Živá probiotika, 50 % denní dávky vitamínu C a 2 000 let tradice. Nepasterizované kimchi z české dílny – pro vaše střeva, imunitu i náladu.">
+    <title>Kimchi od Živiny | Korejský zázrak, co kvasí do krásy</title>
     <style>
         @font-face {
             font-family: 'Albra';
@@ -158,7 +155,7 @@
         }
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: 50px;
+            font-size: 54px;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -0.5px;
@@ -171,7 +168,7 @@
         .hero-desc {
             font-size: 17px;
             color: var(--gray);
-            max-width: 480px;
+            max-width: 460px;
             margin-bottom: 36px;
             line-height: 1.75;
         }
@@ -248,14 +245,11 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 40px;
         }
         .hero-image img {
             width: 100%;
-            height: auto;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 16px;
+            height: 100%;
+            object-fit: cover;
         }
         .hero-stats {
             display: flex;
@@ -276,22 +270,49 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .hero-microcopy { font-size: 12px; color: var(--gray-light); margin-top: 16px; }
 
-        /* ── Trust Bar ── */
-        .trust-bar {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            padding: 16px 40px;
-            background: var(--green);
-            color: var(--white);
-            font-size: 13px;
-            font-weight: 600;
-            flex-wrap: wrap;
+        /* ── USP strip ── */
+        .usp-strip {
+            background: var(--white);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid #e8e2da;
+            border-bottom: 1px solid #e8e2da;
         }
-        .trust-item { display: flex; align-items: center; gap: 6px; }
-        .trust-icon { font-size: 16px; }
+        .usp-item {
+            padding: 40px 28px;
+            text-align: center;
+            border-right: 1px solid #e8e2da;
+        }
+        .usp-item:last-child { border-right: none; }
+        .usp-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .usp-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--black);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .usp-item h3 {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .usp-item p {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
 
         /* ── Section base ── */
         .section {
@@ -301,6 +322,19 @@
             text-align: center;
             max-width: 640px;
             margin: 0 auto 60px;
+        }
+        .section-logo {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
         .section-title {
             font-family: var(--font-heading);
@@ -318,122 +352,46 @@
             line-height: 1.7;
         }
 
-        /* ── Benefits Grid ── */
-        .benefits-section {
+        /* ── Why Kimchi ── */
+        .why-section {
             background: var(--white);
         }
-        .benefits-grid {
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
-        .benefit-card {
+        .why-card {
             background: var(--cream);
             padding: 36px 28px;
             border-radius: 16px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .benefit-card:hover {
+        .why-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.06);
         }
-        .benefit-card-icon {
-            width: 56px;
-            height: 56px;
+        .why-card-icon {
+            width: 52px;
+            height: 52px;
             background: var(--pink-light);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 20px;
         }
-        .benefit-card h3 {
+        .why-card h3 {
             font-family: var(--font-heading);
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        .benefit-card p {
+        .why-card p {
             font-size: 14px;
             color: var(--gray);
             line-height: 1.7;
-            margin-bottom: 12px;
-        }
-        .benefit-card .benefit-link {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--pink);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: gap 0.2s;
-        }
-        .benefit-card .benefit-link:hover {
-            gap: 8px;
-        }
-
-        /* ── Infographic ── */
-        .infographic-section {
-            background: var(--cream);
-            text-align: center;
-        }
-        .infographic-section img {
-            max-width: 800px;
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
-
-        /* ── USP strip ── */
-        .usp-strip {
-            background: var(--white);
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            border-top: 1px solid #e8e2da;
-            border-bottom: 1px solid #e8e2da;
-        }
-        .usp-item {
-            padding: 40px 20px;
-            text-align: center;
-            border-right: 1px solid #e8e2da;
-        }
-        .usp-item:last-child { border-right: none; }
-        .usp-icon {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-        .usp-item h3 {
-            font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .usp-item p {
-            font-size: 13px;
-            color: var(--gray);
-            line-height: 1.5;
-        }
-
-        /* ── Video Section ── */
-        .video-section { background: var(--white); }
-        .video-container {
-            max-width: 960px; margin: 0 auto;
-        }
-        .video-wrapper {
-            position: relative; width: 100%;
-            padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-        }
-        .video-wrapper iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
 
         /* ── Products ── */
@@ -480,7 +438,7 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            border: 2px solid var(--black);
+            border: 2px solid var(--dark);
             background: var(--white);
             cursor: pointer;
             display: flex;
@@ -490,7 +448,7 @@
             transition: background 0.2s, color 0.2s;
         }
         .carousel-btn:hover {
-            background: var(--black);
+            background: var(--dark);
             color: var(--white);
         }
         .carousel-dots {
@@ -525,6 +483,20 @@
             object-fit: contain;
             padding: 12px;
         }
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--pink);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .product-tag.green { background: var(--green); }
         .product-info {
             padding: 20px 24px 24px;
         }
@@ -600,6 +572,84 @@
         }
         .btn-cart:hover { background: var(--pink-hover); }
 
+        /* ── About / Story ── */
+        .story-section {
+            background: var(--cream);
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .story-content .section-logo { margin-bottom: 20px; }
+        .story-content h2 {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .story-content p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .story-content p strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+        .story-content .btn-black { margin-top: 16px; }
+        .story-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .team-img {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* ── Process ── */
+        .process-section {
+            background: var(--white);
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .process-step {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+        }
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--pink);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .process-step h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .process-step p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
         /* ── Bundles ── */
         .bundles-section {
             background: var(--cream);
@@ -638,6 +688,10 @@
             border-radius: 100px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        .bundle-emoji {
+            font-size: 52px;
+            margin-bottom: 16px;
         }
         .bundle-img {
             width: 160px;
@@ -678,66 +732,6 @@
             font-weight: 600;
             margin-top: 6px;
         }
-        .bundle-urgency {
-            font-size: 12px; color: var(--red); font-weight: 700;
-            margin-bottom: 16px; display: flex; align-items: center;
-            justify-content: center; gap: 4px;
-        }
-
-        /* ── FAQ ── */
-        .faq-section { background: var(--white); }
-        .faq-list { max-width: 720px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #e0d8ce; }
-        .faq-item summary {
-            font-family: var(--font-heading); font-size: 18px; font-weight: 700;
-            padding: 24px 0; cursor: pointer; list-style: none;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .faq-item summary::after { content: '+'; font-size: 24px; font-weight: 300; color: var(--pink); }
-        .faq-item[open] summary::after { content: '\2212'; }
-        .faq-item p { font-size: 15px; color: var(--gray); line-height: 1.7; padding: 0 0 24px; }
-        .faq-item summary::-webkit-details-marker { display: none; }
-
-        /* ── About / Story ── */
-        .story-section {
-            background: var(--cream);
-        }
-        .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .story-content h2 {
-            font-family: var(--font-heading);
-            font-size: 36px;
-            font-weight: 800;
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .story-content p {
-            font-size: 16px;
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-        .story-content p strong {
-            color: var(--black);
-            font-weight: 700;
-        }
-        .story-content .btn-black { margin-top: 16px; }
-        .story-photo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .team-img {
-            width: 100%;
-            max-width: 560px;
-            border-radius: 20px;
-            object-fit: cover;
-        }
 
         /* ── Testimonials ── */
         .testimonials-section {
@@ -773,14 +767,6 @@
             font-weight: 400;
             color: var(--gray-light);
         }
-        .testimonial-footer { display: flex; align-items: center; gap: 12px; }
-        .testimonial-avatar {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: var(--pink-light); color: var(--pink);
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 14px; flex-shrink: 0;
-        }
-        .testimonial-verified { font-size: 11px; color: var(--green); font-weight: 600; margin-top: 2px; }
 
         /* ── CTA Section ── */
         .cta-section {
@@ -803,19 +789,6 @@
             color: var(--gray);
             line-height: 1.7;
         }
-        .guarantee-badge {
-            display: inline-flex; align-items: center; gap: 10px;
-            margin-top: 24px; font-size: 13px; color: var(--gray); font-weight: 500;
-        }
-        .email-capture { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08); }
-        .email-capture-label { font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--black); }
-        .email-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
-        .email-input {
-            flex: 1; padding: 14px 20px; border: 2px solid #e0d8ce;
-            border-radius: 6px; font-size: 15px; font-family: var(--font-body); background: var(--white);
-        }
-        .email-input:focus { outline: none; border-color: var(--pink); }
-        .email-note { font-size: 12px; color: var(--gray-light); margin-top: 10px; }
 
         /* ── Footer ── */
         .footer {
@@ -865,6 +838,94 @@
             color: #666;
         }
 
+        /* ── Hero Rating ── */
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .hero-rating .hero-stars { color: var(--gold-star); font-size: 18px; }
+        .hero-rating-text { font-size: 14px; color: var(--gray); font-weight: 500; }
+        .hero-rating-text strong { color: var(--black); }
+        .hero-microcopy { font-size: 12px; color: var(--gray-light); margin-top: 16px; }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px 40px;
+            background: var(--green);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        .trust-item { display: flex; align-items: center; gap: 6px; }
+        .trust-icon { font-size: 16px; }
+
+        /* ── Testimonial enhancements ── */
+        .testimonial-footer { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--pink-light); color: var(--pink);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 14px; flex-shrink: 0;
+        }
+        .testimonial-verified { font-size: 11px; color: var(--green); font-weight: 600; margin-top: 2px; }
+
+        /* ── Bundle urgency ── */
+        .bundle-urgency {
+            font-size: 12px; color: var(--red); font-weight: 700;
+            margin-bottom: 16px; display: flex; align-items: center;
+            justify-content: center; gap: 4px;
+        }
+        .product-tag.bestseller { background: var(--red); }
+
+        /* ── FAQ ── */
+        .faq-section { background: var(--white); }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #e0d8ce; }
+        .faq-item summary {
+            font-family: var(--font-heading); font-size: 18px; font-weight: 700;
+            padding: 24px 0; cursor: pointer; list-style: none;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-item summary::after { content: '+'; font-size: 24px; font-weight: 300; color: var(--pink); }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item p { font-size: 15px; color: var(--gray); line-height: 1.7; padding: 0 0 24px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        /* ── Guarantee + Email ── */
+        .guarantee-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 24px; font-size: 13px; color: var(--gray); font-weight: 500;
+        }
+        .email-capture { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .email-capture-label { font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--black); }
+        .email-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+        .email-input {
+            flex: 1; padding: 14px 20px; border: 2px solid #e0d8ce;
+            border-radius: 6px; font-size: 15px; font-family: var(--font-body); background: var(--white);
+        }
+        .email-input:focus { outline: none; border-color: var(--pink); }
+        .email-note { font-size: 12px; color: var(--gray-light); margin-top: 10px; }
+
+        /* ── Video Section ── */
+        .video-section { background: var(--white); }
+        .video-container {
+            max-width: 960px; margin: 0 auto;
+        }
+        .video-wrapper {
+            position: relative; width: 100%;
+            padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
         /* ── Mobile Sticky CTA ── */
         .mobile-sticky-cta {
             display: none; position: fixed; bottom: 0; left: 0; right: 0;
@@ -877,11 +938,13 @@
             .hero { grid-template-columns: 1fr; min-height: auto; }
             .hero-content { padding: 60px 40px; }
             .hero h1 { font-size: 42px; }
-            .hero-image { height: 400px; padding: 24px; }
-            .usp-strip { grid-template-columns: repeat(3, 1fr); }
+            .hero-image { height: 400px; }
+            .usp-strip { grid-template-columns: repeat(2, 1fr); }
+            .usp-item:nth-child(2) { border-right: none; }
             .section { padding: 80px 40px; }
-            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-            .bundles-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid, .process-steps, .bundles-grid, .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .story-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
             .trust-bar { gap: 20px; padding: 14px 20px; }
@@ -892,7 +955,7 @@
             .header { padding: 12px 20px; }
             .header-nav { display: none; }
             .hero-content { padding: 40px 20px; }
-            .hero h1 { font-size: 30px; }
+            .hero h1 { font-size: 32px; }
             .hero-desc { font-size: 15px; }
             .hero-buttons { flex-direction: column; align-items: stretch; }
             .btn-pink, .btn-outline { text-align: center; justify-content: center; }
@@ -902,7 +965,7 @@
             .usp-item { border-right: none; border-bottom: 1px solid #e8e2da; }
             .section { padding: 60px 20px; }
             .section-title { font-size: 28px; }
-            .benefits-grid, .bundles-grid, .testimonials-grid {
+            .why-grid, .process-steps, .bundles-grid, .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             .product-card { min-width: 260px; }
@@ -915,304 +978,204 @@
             .mobile-sticky-cta { display: block; }
             .trust-bar { gap: 12px; font-size: 12px; padding: 12px 16px; }
             .email-form { flex-direction: column; }
-            .hero-image { height: auto; padding: 20px; }
-        }
-        /* Cookie Consent Banner */
-        .cookie-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99998;
-            background: rgba(0,0,0,0.5);
-        }
-        .cookie-banner {
-            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 99999;
-            background: #f5f5f5; color: #222; padding: 32px 36px 28px;
-            border-radius: 16px; max-width: 620px; width: calc(100% - 32px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-            font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6;
-        }
-        .cookie-banner-content {
-            display: flex; gap: 24px; align-items: flex-start; margin-bottom: 8px;
-        }
-        .cookie-icon { flex-shrink: 0; width: 80px; height: 80px; }
-        .cookie-text { flex: 1; }
-        .cookie-text a { color: #222; font-weight: 700; text-decoration: underline; }
-        .cookie-text a:hover { color: #d63370; }
-        .cookie-banner-buttons {
-            display: flex; gap: 16px; margin-top: 20px;
-        }
-        .cookie-btn {
-            flex: 1; padding: 16px 24px; border: none; border-radius: 50px; cursor: pointer;
-            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;
-        }
-        .cookie-btn:hover { opacity: 0.85; }
-        .cookie-btn-reject { background: #1a1a1a; color: #fff; }
-        .cookie-btn-accept { background: #d63370; color: #fff; }
-        @media (max-width: 600px) {
-            .cookie-banner { padding: 24px 20px 20px; bottom: 16px; }
-            .cookie-icon { width: 56px; height: 56px; }
-            .cookie-banner-content { gap: 16px; }
-            .cookie-text { font-size: 14px; }
-            .cookie-btn { font-size: 14px; padding: 14px 16px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Cookie Consent Banner -->
-<div id="cookieOverlay" class="cookie-overlay" style="display:none;"></div>
-<div id="cookieConsent" class="cookie-banner" style="display:none;">
-    <div class="cookie-banner-content">
-        <svg class="cookie-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" stroke="#222" stroke-width="3" fill="none"/>
-            <circle cx="35" cy="40" r="5" fill="#222"/><circle cx="55" cy="55" r="4" fill="#222"/>
-            <circle cx="40" cy="65" r="3.5" fill="#222"/><circle cx="65" cy="38" r="3" fill="#222"/>
-            <circle cx="58" cy="72" r="3" fill="#222"/><circle cx="28" cy="55" r="2.5" fill="#222"/>
-            <path d="M50 5 C50 5 52 12 48 14 C44 16 38 12 38 12" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M72 15 C72 15 68 22 63 21 C58 20 57 13 57 13" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M85 35 C85 35 78 37 76 42 C74 47 79 52 79 52" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M25 20 C25 20 30 25 28 30" stroke="#222" stroke-width="2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <div class="cookie-text">
-            Cookies? Mňam! Tyhle sice nejdou sníst, ale pomohou nám vylepšit váš zážitek na našem webu. Dáte si? <a href="https://www.zivina.cz/podminky-ochrany-osobnich-udaju/" target="_blank">Více informací</a>
-        </div>
-    </div>
-    <div class="cookie-banner-buttons">
-        <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Odmítnout</button>
-        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Souhlasím</button>
-    </div>
-</div>
-
 <!-- Top Bar -->
 <div class="top-bar">
-    &#x1F381; <a href="https://www.zivina.cz/vernostni-program/" style="color: var(--pink); text-decoration: underline; font-weight: 700;">Sleva 250 Kč na první objednávku</a> &nbsp;|&nbsp; Nepasterizované &nbsp;|&nbsp; Doprava zdarma od <strong>1 750 Kč</strong>
+    &#x1F525; Objednejte dnes &mdash; <strong>odeslání do 24h</strong> &nbsp;|&nbsp; Doprava zdarma od <strong>1 750 Kč</strong>
 </div>
 
 <!-- Header -->
 <header class="header">
     <a href="https://www.zivina.cz" class="logo"><img src="logo-zivina.svg" alt="Živina" height="40"></a>
     <nav class="header-nav">
-        <a href="#benefity">Proč kimchi?</a>
+        <a href="#proc-kimchi">Proč kimchi?</a>
         <a href="#produkty">Produkty</a>
-        <a href="#faq">Časté dotazy</a>
-        <a href="https://www.zivina.cz/kimchi/" class="header-cta">KOUPIT &rarr;</a>
+        <a href="#balicky">Balíčky</a>
+        <a href="https://www.zivina.cz/kimchi/" class="header-cta">DO KOŠÍKU &rarr;</a>
     </nav>
 </header>
 
 <!-- Hero -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-badge">&#x1F9EC; Zdraví začíná ve střevech</div>
-        <h1>Váš mikrobiom si zaslouží to&nbsp;<em>nejlepší.</em></h1>
-        <p class="hero-desc">Až 80&nbsp;% vaší imunity se tvoří ve střevech. Kimchi od Živiny je plné živých probiotik, vitamínů a&nbsp;antioxidantů – bez pasterizace, bez kompromisů.</p>
-        <div class="hero-buttons">
-            <a href="#benefity" class="btn-pink">ZJISTĚTE PROČ &darr;</a>
-            <a href="#produkty" class="btn-outline">Rovnou k&nbsp;produktům</a>
+        <div class="hero-badge">Korejský fenomén v&nbsp;Česku</div>
+        <div class="hero-rating">
+            <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="hero-rating-text">4,9/5 od <strong>150+ zákazníků</strong></span>
         </div>
+        <h1>Zdravíčko<br>ze <em>Živiny!</em></h1>
+        <p class="hero-desc">Kam nechodí Kimchi, tam chodí lékař.<br>Dopřejte si vitamíny ze Živiny, mňam!</p>
+        <div class="hero-buttons">
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink">CHCI OCHUTNAT &rarr;</a>
+            <a href="#proc-kimchi" class="btn-outline">Proč kimchi?</a>
+        </div>
+        <p class="hero-microcopy">&#x2705; Chlazená přeprava &nbsp;&bull;&nbsp; &#x2705; Bez konzervantů a&nbsp;přídatných látek</p>
         <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>~26 kcal</strong>
+                <span>na 100 g</span>
+            </div>
             <div class="hero-stat">
                 <strong>2 000+</strong>
                 <span>let tradice</span>
             </div>
             <div class="hero-stat">
-                <strong>Top 5</strong>
-                <span>nejzdravějších jídel</span>
-            </div>
-            <div class="hero-stat">
-                <strong>50 %+</strong>
-                <span>denní dávky vit. C</span>
+                <strong>6+ měsíců</strong>
+                <span>Trvanlivost</span>
             </div>
         </div>
     </div>
     <div class="hero-image">
-        <img src="images/kimchi infografika.webp" alt="Kimchi infografika – probiotika, imunita, trávení, srdce, hubnutí">
+        <img src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/shop/orig/86-2_115n-kimchi-natur-02-zivina-1680x1680.jpg?6863edab" alt="Kimchi Živina" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 </section>
 
 <!-- Trust Bar -->
 <section class="trust-bar">
-    <div class="trust-item"><span class="trust-icon">&#x1F9EA;</span><span>Živá probiotika</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F9EA;</span><span>Bez přídatných látek</span></div>
     <div class="trust-item"><span class="trust-icon">&#x1F1E8;&#x1F1FF;</span><span>Vyrobeno v&nbsp;Česku</span></div>
     <div class="trust-item"><span class="trust-icon">&#x1F6E1;&#xFE0F;</span><span>Bez konzervantů</span></div>
     <div class="trust-item"><span class="trust-icon">&#x2744;&#xFE0F;</span><span>Chlazená přeprava</span></div>
     <div class="trust-item"><span class="trust-icon">&#x1F331;</span><span>100% rostlinné</span></div>
 </section>
 
-<!-- Benefits Grid -->
-<section class="section benefits-section" id="benefity">
+
+<!-- Why Kimchi -->
+<section class="section why-section" id="proc-kimchi">
     <div class="section-header">
-        <h2 class="section-title">Proč je kimchi <em>superfood?</em></h2>
-        <p class="section-subtitle">Jedno z&nbsp;5 nejzdravějších jídel světa podle Health Magazine. Více než 2&nbsp;000 let tradice – a&nbsp;věda mu dává za pravdu.</p>
+        <h2 class="section-title">Proč zrovna <em>kimchi?</em></h2>
+        <p class="section-subtitle">Více než 2 000 let tradice. Jedno z&nbsp;5 nejzdravějších jídel na světě. A&nbsp;teď i&nbsp;z&nbsp;Česka.</p>
     </div>
 
-    <div class="benefits-grid">
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x1F9EC;</div>
-            <h3>Živá probiotika</h3>
-            <p>Bakterie Lactobacillus v&nbsp;kimchi podporují rovnováhu střevní mikroflóry. Naše kimchi je nepasterizované – probiotika jsou skutečně živá.</p>
-            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-card-icon">&#x1F966;</div>
+            <h3>Mléčně kvašená zelenina</h3>
+            <p>Tradiční korejský fermentovaný salát z&nbsp;pekingského zelí, ředkvičky, červeného zelí, fialové mrkve a&nbsp;jarní cibulky. Přes 2 000 let tradice.</p>
         </div>
-
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x1F6E1;&#xFE0F;</div>
-            <h3>Silnější imunita</h3>
-            <p>Až 80&nbsp;% vaší imunity se tvoří ve střevech. Probiotika podporují funkci imunitních buněk a&nbsp;mohou snižovat zánětlivé procesy v&nbsp;těle.</p>
-            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        <div class="why-card">
+            <div class="why-card-icon">&#x1F525;</div>
+            <h3>Autentická chuť</h3>
+            <p>Šťavnaté, příjemně nakyslé a&nbsp;křupavé. Chuť drží pohromadě česnek, zázvor a&nbsp;fermentovaná sójová omáčka. Od jemného po pálivé.</p>
         </div>
-
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x1F34B;</div>
-            <h3>Vitamín C a&nbsp;antioxidanty</h3>
-            <p>100&nbsp;g kimchi obsahuje více než 50&nbsp;% doporučené denní dávky vitamínu C. Navíc je plné antioxidantů, které chrání buňky před poškozením.</p>
-            <a href="https://www.zivina.cz/blog/kimchi-co-to-je-a-proc-ho-jist/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        <div class="why-card">
+            <div class="why-card-icon">&#x1F331;</div>
+            <h3>100% vegan</h3>
+            <p>Místo rybí omáčky používáme vysoce kvalitní fermentovanou japonskou sójovou omáčku. Bez přídatných látek, bez konzervantů.</p>
         </div>
-
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x2764;&#xFE0F;</div>
-            <h3>Zdravé srdce</h3>
-            <p>Fermentované potraviny mají protizánětlivé vlastnosti. Bioaktivní sloučeniny v&nbsp;kimchi přispívají ke snížení zánětů, které jsou rizikovým faktorem srdečních onemocnění.</p>
-            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
-        </div>
-
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x1F9E0;</div>
-            <h3>Lepší nálada</h3>
-            <p>Osa střeva-mozek je skutečná. Výzkumy ukazují, že probiotika mohou pozitivně ovlivnit psychickou pohodu a&nbsp;snížit riziko depresivních stavů.</p>
-            <a href="https://www.zivina.cz/blog/proc-zaradit-do-jidelnicku-fermentovane-potraviny-jako-napr--kimchi/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
-        </div>
-
-        <div class="benefit-card">
-            <div class="benefit-card-icon">&#x2696;&#xFE0F;</div>
-            <h3>Podpora hubnutí</h3>
-            <p>Pouhých 26 kcal na 100 g, plné vlákniny a&nbsp;fermentačních enzymů. Kimchi pomáhá trávení a&nbsp;je ideální součástí vyváženého jídelníčku.</p>
-            <a href="https://www.zivina.cz/blog/kimchi-co-to-je-a-proc-ho-jist/" class="benefit-link">Více v&nbsp;článku &rarr;</a>
+        <div class="why-card">
+            <div class="why-card-icon">&#x1F373;</div>
+            <h3>Univerzální v&nbsp;kuchyni</h3>
+            <p>K&nbsp;rýži, do bowlů, sendvičů, ramen, smažené rýže — nebo rovnou z&nbsp;vidličky. Skvělé i&nbsp;k&nbsp;tofu a&nbsp;vajíčkům.</p>
         </div>
     </div>
 </section>
 
-<!-- Discount Strip -->
-<section style="background: var(--pink); padding: 28px 40px; text-align: center;">
-    <a href="https://www.zivina.cz/vernostni-program/" style="color: var(--white); text-decoration: none; display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;">
-        <span style="font-size: 28px;">&#x1F381;</span>
-        <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 800;">Získejte slevu 250 Kč na první objednávku</span>
-        <span style="background: var(--white); color: var(--pink); font-weight: 700; font-size: 13px; padding: 8px 20px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Zaregistrovat se &rarr;</span>
-    </a>
-</section>
-
-
-<!-- Video -->
-<section class="section video-section">
-    <div class="section-header">
-        <h2 class="section-title">Jak vypadá <em>poctivé kimchi?</em></h2>
-        <p class="section-subtitle">Podívejte se, jak naše kimchi vzniká – od čerstvé zeleniny až po skleničku.</p>
-    </div>
-    <div class="video-container">
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/MtgKo9ZtIz8" title="Živina: Jak vypadá poctivé Kimchi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-    </div>
-</section>
-
-<!-- Products (no spiciness tags, WebP images) -->
+<!-- Products -->
 <section class="section products-section" id="produkty">
     <div class="section-header">
         <h2 class="section-title">Vyberte si <em>svou chuť</em></h2>
-        <p class="section-subtitle">6 variant – od jemné po pálivou. Každá plná živých probiotik.</p>
+        <p class="section-subtitle">Od jemného po pálivé. Najděte si svou oblíbenou variantu.</p>
     </div>
 
     <div class="products-carousel-wrapper">
     <div class="products-grid" id="productsCarousel">
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_neaplive fb.webp" alt="Kimchi Nepálivé" loading="lazy">
+                <img src="images/carousel_neaplive fb.webp" alt="Kimchi Nepálivé">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;<span style="display:inline-block;width:0.6em;overflow:hidden;">&#9733;</span> <span>(56x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(8x)</span></div>
                 <h3>Kimchi Nepálivé</h3>
                 <p class="desc">Autentická chuť bez pálivosti. Křupavé, nakyslé, s&nbsp;umami. Ideální pro děti i&nbsp;začátečníky.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-nepalive-300-g-2/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-nepalive-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_stredne fb.webp" alt="Kimchi Natur" loading="lazy">
+                <img src="images/carousel_stredne fb.webp" alt="Kimchi Středně pálivé">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(15x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(12x)</span></div>
                 <h3>Kimchi Natur</h3>
                 <p class="desc">Klasika se střední pálivostí. Křupavé zelí, česnek, zázvor a&nbsp;gochugaru chilli vločky.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-natur-300-g-2/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-natur-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_palive fb.webp" alt="Kimchi Pálivé" loading="lazy">
+                <img src="images/carousel_palive fb.webp" alt="Kimchi Pálivé">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(11x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(15x)</span></div>
                 <h3>Kimchi Pálivé</h3>
                 <p class="desc">Pro milovníky ostrého. Výrazná dávka gochugaru chilli s&nbsp;plnou fermentovanou chutí.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-palive-300-g-2/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-palive-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_fenykl fb.webp" alt="Kimchi Fenykl" loading="lazy">
+                <img src="images/carousel_fenykl fb.webp" alt="Kimchi Fenykl">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(1x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(5x)</span></div>
                 <h3>Kimchi Fenykl</h3>
                 <p class="desc">Středně pálivé s&nbsp;fenyklem. Komplexní, lehce anýzová chuť pro gurmány.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">169<sup>,90</sup> Kč <small>/ 300g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-fenykl-300-g-2/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-fenykl-300-g-2/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_jidas fb.webp" alt="Kimchi Jidášovo ucho" loading="lazy">
+                <img src="images/carousel_jidas fb.webp" alt="Kimchi Jidášovo ucho">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(9x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(3x)</span></div>
                 <h3>Kimchi Jidášovo ucho</h3>
-                <p class="desc">Jemně pálivé s&nbsp;houbou jidášovo ucho. Výrazné umami a&nbsp;zajímavá textura.</p>
+                <p class="desc">Nepálivé s&nbsp;houbou jidášovo ucho. Výrazné umami a&nbsp;zajímavá textura.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">249<sup>,90</sup> Kč <small>/ 400g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-jidasovo-ucho-400-g/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-jidasovo-ucho-400-g/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="images/carousel_shiitake fb.webp" alt="Kimchi Shiitake" loading="lazy">
+                <img src="images/carousel_shiitake fb.webp" alt="Kimchi Shiitake">
             </div>
             <div class="product-info">
-                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(14x)</span></div>
+                <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>(3x)</span></div>
                 <h3>Kimchi Shiitake</h3>
-                <p class="desc">Jemně pálivé s&nbsp;houbou shiitake. Hluboké umami a&nbsp;křupavá zelenina.</p>
+                <p class="desc">Nepálivé s&nbsp;houbou shiitake. Hluboké umami a&nbsp;křupavá zelenina.</p>
                 <div class="product-stock">&#10003; skladem k&nbsp;odeslání</div>
                 <div class="product-bottom">
                     <div class="product-price">249<sup>,90</sup> Kč <small>/ 400g</small></div>
-                    <a href="https://www.zivina.cz/kimchi-shiitake-400-g/" class="btn-cart">&#x1F6D2; KOUPIT</a>
+                    <a href="https://www.zivina.cz/kimchi-shiitake-400-g/" class="btn-cart">&#x1F6D2; DO KOŠÍKU</a>
                 </div>
             </div>
         </div>
@@ -1222,6 +1185,61 @@
         <div class="carousel-dots" id="carouselDots"></div>
         <button class="carousel-btn" id="carouselNext" aria-label="Další">&#8594;</button>
     </div>
+    </div>
+</section>
+
+<!-- Testimonials (moved up — right after products for social proof at decision point) -->
+<section class="section testimonials-section">
+    <div class="section-header">
+        <h2 class="section-title">Co říkají <em>naši zákazníci</em></h2>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Konečně pořádné kimchi v&nbsp;Česku! Natur varianta je naprosto dokonalá. Křupavé, kyselé a&nbsp;s tou správnou štiplavostí. Objednávám pravidelně.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">MK</div>
+                <div>
+                    <div class="testimonial-author">Markéta K. <span>| Praha</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Nepálivé kimchi zbožňují i&nbsp;naše děti. Konečně zdravá svačinka, o&nbsp;kterou se nemusím hádat. Doručení v&nbsp;chladu funguje skvěle.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">TR</div>
+                <div>
+                    <div class="testimonial-author">Tomáš R. <span>| Brno</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Jako fanoušek korejské kuchyně jsem skeptický vůči českým produktům. Živina mě ale mile překvapila. Pálivé kimchi má správný říz!</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">JS</div>
+                <div>
+                    <div class="testimonial-author">Jana S. <span>| Olomouc</span></div>
+                    <div class="testimonial-verified">&#x2705; Ověřeno nákupem</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video -->
+<section class="section video-section">
+    <div class="section-header">
+        <h2 class="section-title">Jak vypadá <em>poctivé kimchi?</em></h2>
+        <p class="section-subtitle">Podívejte se, jak naše kimchi vzniká — od čerstvé zeleniny až po skleničku.</p>
+    </div>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/MtgKo9ZtIz8" title="Živina: Jak vypadá poctivé Kimchi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
     </div>
 </section>
 
@@ -1238,24 +1256,24 @@
             <h3>Kilo a&nbsp;půl Mix</h3>
             <p class="bundle-desc">3 &times; 500g kimchi v&nbsp;různých příchutích. Ideální na rozkoukání.</p>
             <div class="bundle-price">
-                <span class="original">749,70 Kč</span>
-                <span class="sale">674,70 Kč</span>
-                <small>Ušetříte 75 Kč</small>
+                <span class="original">749 Kč</span>
+                <span class="sale">674,90 Kč</span>
+                <small>Ušetříte 74 Kč</small>
             </div>
-            <a href="https://www.zivina.cz/kilo-a-pul-kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT KOUPIT</a>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
         </div>
 
         <div class="bundle-card featured">
             <div class="bundle-urgency">&#x23F3; Akční cena platí jen tento týden</div>
             <img class="bundle-img" src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/shop/orig/86-1_86-sesty-smysl-001-zivina-1680x1680-amber.jpg?6908dc6d" alt="Šestý smysl" loading="lazy">
             <h3>Šestý smysl</h3>
-            <p class="bundle-desc">6 kimchi ve všech variantách. Pro začátečníky, co chtějí ochutnat všechno.</p>
+            <p class="bundle-desc">6 kimchi ve všech 4 variantách. Pro začátečníky, co chtějí ochutnat všechno.</p>
             <div class="bundle-price">
-                <span class="original">1 019,40 Kč</span>
-                <span class="sale">917,50 Kč</span>
-                <small>Ušetříte 101,90 Kč</small>
+                <span class="original">1 019 Kč</span>
+                <span class="sale">917,90 Kč</span>
+                <small>Ušetříte 101 Kč</small>
             </div>
-            <a href="https://www.zivina.cz/kimchi--sesty-smysl--balicek/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT KOUPIT</a>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
         </div>
 
         <div class="bundle-card">
@@ -1263,53 +1281,11 @@
             <h3>Nálož probiotik</h3>
             <p class="bundle-desc">2 &times; Kimchi Natur + jablečný ocet. Fermentovaná kombo pro zdraví.</p>
             <div class="bundle-price">
-                <span class="original">699,70 Kč</span>
-                <span class="sale">629,70 Kč</span>
+                <span class="original">700 Kč</span>
+                <span class="sale">629,90 Kč</span>
                 <small>Ušetříte 70 Kč</small>
             </div>
-            <a href="https://www.zivina.cz/naloz-probiotik/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT KOUPIT</a>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials -->
-<section class="section testimonials-section">
-    <div class="section-header">
-        <h2 class="section-title">Co říkají <em>naši zákazníci</em></h2>
-    </div>
-    <div class="testimonials-grid">
-        <div class="testimonial">
-            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>Nejlepší Kimchi na trhu! Zaujme svou nezvyklou barvou a&nbsp;oslní chutí. Oceňuji, že je veganské, kterého je málo na trhu. Nakupuji i&nbsp;přes to, že si dělám doma vlastní.</p>
-            <div class="testimonial-footer">
-                <div class="testimonial-avatar">D</div>
-                <div>
-                    <div class="testimonial-author">Dominik</div>
-                    <div class="testimonial-verified">&#x2705; Ověřený zákazník</div>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial">
-            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>Proste MŇAM! Křupavá, lehce pikantní chuť, to kimchi se fakt povedlo.</p>
-            <div class="testimonial-footer">
-                <div class="testimonial-avatar">S</div>
-                <div>
-                    <div class="testimonial-author">Simona</div>
-                    <div class="testimonial-verified">&#x2705; Ověřený zákazník</div>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial">
-            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>Skvělé kimchi, tak akorát pikantní, krásně křupavé a&nbsp;zkrátka vyladěné.</p>
-            <div class="testimonial-footer">
-                <div class="testimonial-avatar">KB</div>
-                <div>
-                    <div class="testimonial-author">Katka</div>
-                    <div class="testimonial-verified">&#x2705; Ověřený zákazník</div>
-                </div>
-            </div>
+            <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="width:100%; justify-content:center;">PŘIDAT DO KOŠÍKU</a>
         </div>
     </div>
 </section>
@@ -1321,16 +1297,8 @@
     </div>
     <div class="faq-list">
         <details class="faq-item">
-            <summary>Kolik kimchi bych měl/a jíst denně?</summary>
-            <p>Doporučujeme začít s&nbsp;jednou až dvěma lžícemi denně (cca 30–50 g) a&nbsp;postupně zvyšovat. Korejci sní v&nbsp;průměru 18 kg kimchi ročně – to je asi 50 g denně. Pravidelná malá porce je lepší než občasná velká.</p>
-        </details>
-        <details class="faq-item">
-            <summary>Jsou probiotika v&nbsp;kimchi skutečně živá?</summary>
-            <p>Ano! Na rozdíl od většiny průmyslově vyráběných kimchi na trhu je to naše <strong>nepasterizované</strong>. Pasterizace zabíjí probiotické bakterie. Naše kimchi obsahuje živé kultury Lactobacillus po celou dobu trvanlivosti – proto ho posíláme v&nbsp;chladu.</p>
-        </details>
-        <details class="faq-item">
             <summary>Jak kimchi chutná?</summary>
-            <p>Kimchi má výraznou, pikantní a&nbsp;lehce kyselou chuť s&nbsp;umami tóny. Každá varianta je jiná – Natur je jemně kyselé a&nbsp;křupavé, Pálivé má říz díky korejskému Gochugaru, Nepálivé je ideální pro rodiny s&nbsp;dětmi. Nejlepší způsob, jak zjistit svou oblíbenou, je ochutnat!</p>
+            <p>Kimchi má výraznou, pikantní a&nbsp;lehce kyselou chuť s&nbsp;umami tóny. Každá varianta je jiná — Natur je jemně kyselé a&nbsp;křupavé, Pálivé má říz díky korejskému Gochugaru, Nepálivé je ideální pro rodiny s&nbsp;dětmi. Nejlepší způsob, jak zjistit svou oblíbenou, je ochutnat!</p>
         </details>
         <details class="faq-item">
             <summary>Je kimchi bezpečné pro děti?</summary>
@@ -1338,24 +1306,24 @@
         </details>
         <details class="faq-item">
             <summary>Jak dlouho kimchi vydrží?</summary>
-            <p>Naše kimchi má trvanlivost minimálně 6 měsíců od data výroby při skladování v&nbsp;lednici (do 8 °C). Po otevření doporučujeme spotřebovat do 4 týdnů, ale díky přirozené fermentaci se nekazí – jen postupně mění chuť.</p>
+            <p>Naše kimchi má trvanlivost minimálně 6 měsíců od data výroby při skladování v&nbsp;lednici (do 8 °C). Po otevření doporučujeme spotřebovat do 4 týdnů, ale díky přirozené fermentaci se nekazí — jen postupně mění chuť.</p>
         </details>
         <details class="faq-item">
             <summary>Jak funguje doručení v&nbsp;chladu?</summary>
             <p>Kimchi balíme s&nbsp;chladicími gely a&nbsp;izolačním obalem, aby probiotika zůstala živá během přepravy. Odesíláme do 24 hodin od objednání. Doprava zdarma při objednávce nad 1 750 Kč.</p>
         </details>
         <details class="faq-item">
-            <summary>Je kimchi opravdu zdravé?</summary>
-            <p>Rozhodně! Kimchi bylo zařazeno mezi 5 nejzdravějších potravin na světě. Je plné probiotik (Lactobacillus), vitamínů C a&nbsp;B, antioxidantů a&nbsp;vlákniny. Má pouhých 26 kcal na 100 g a&nbsp;pozitivně ovlivňuje trávení, imunitu i&nbsp;náladu přes osu střeva-mozek.</p>
+            <summary>Co když mi kimchi nechutná?</summary>
+            <p>Neotevřené kimchi v&nbsp;původním obalu můžete vrátit do 14 dnů od doručení. Pokud máte s&nbsp;produktem jakýkoli problém, neváhejte nás kontaktovat — rádi vám poradíme s&nbsp;výběrem varianty, která vám bude sedět.</p>
         </details>
         <details class="faq-item">
-            <summary>Co když mi kimchi nechutná?</summary>
-            <p>Neotevřené kimchi v&nbsp;původním obalu můžete vrátit do 14 dnů od doručení. Pokud máte s&nbsp;produktem jakýkoli problém, neváhejte nás kontaktovat – rádi vám poradíme s&nbsp;výběrem varianty, která vám bude sedět.</p>
+            <summary>Je kimchi opravdu zdravé?</summary>
+            <p>Kimchi je tradiční mléčně kvašená zelenina s&nbsp;více než 2 000 lety historie. Je nízkokalorické (cca 26 kcal / 100 g), obsahuje vlákninu a&nbsp;živé kultury vznikající přirozenou fermentací. Naše kimchi je navíc nepasterizované, takže si fermentační proces zachovává po celou dobu trvanlivosti.</p>
         </details>
     </div>
 </section>
 
-<!-- Story Section -->
+<!-- Story Section (moved after FAQ — brand narrative as supporting content) -->
 <section class="section story-section">
     <div class="story-grid">
         <div class="story-content">
@@ -1374,14 +1342,19 @@
 <!-- CTA -->
 <section class="cta-section">
     <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
-    <h2>Dejte svým střevům to, co potřebují.</h2>
-    <p>Živá probiotika, vitamíny a&nbsp;2 000 let korejské tradice – v&nbsp;jedné české skleničce.<br>Chlazená přeprava po celé ČR.</p>
+    <h2>Ochutnejte kimchi, které si zamilujete.</h2>
+    <p>Korejci ho jedí 18 kg ročně. Zkuste to taky a&nbsp;vaše tělo vám poděkuje.<br>Doručení v&nbsp;chladu po celé ČR.</p>
     <a href="https://www.zivina.cz/kimchi/" class="btn-pink" style="padding: 18px 44px; font-size: 16px; display: inline-block; margin-bottom: 20px;">CHCI OCHUTNAT &rarr;</a>
     <br>
-    <div class="guarantee-badge">&#x2744;&#xFE0F; Chlazená přeprava &bull; Nepasterizované &bull; Český výrobek</div>
+    <div class="guarantee-badge">&#x2744;&#xFE0F; Chlazená přeprava &bull; Bez konzervantů &bull; Český výrobek</div>
 
-    <div style="margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08);">
-        <a href="https://www.zivina.cz/vernostni-program/" class="btn-black" style="padding: 18px 44px; font-size: 16px;">&#x1F381; ZÍSKEJTE SLEVU 250 Kč NA PRVNÍ OBJEDNÁVKU &rarr;</a>
+    <div class="email-capture">
+        <div class="email-capture-label">&#x1F381; Chcete 10% slevu na první objednávku?</div>
+        <form class="email-form" action="#" method="post">
+            <input type="email" class="email-input" placeholder="vas@email.cz" required>
+            <button type="submit" class="btn-pink" style="white-space: nowrap;">CHCI SLEVU</button>
+        </form>
+        <p class="email-note">Žádný spam. Odhlášení jedním klikem.</p>
     </div>
 </section>
 
@@ -1396,32 +1369,31 @@
             <h4>Produkty</h4>
             <ul>
                 <li><a href="https://www.zivina.cz/kimchi/">Kimchi</a></li>
-                <li><a href="https://www.zivina.cz/kombucha/">Kombucha</a></li>
-                <li><a href="https://www.zivina.cz/omacky-na-vareni/">Omáčky</a></li>
-                <li><a href="https://www.zivina.cz/produkty/">Všechny produkty</a></li>
+                <li><a href="https://www.zivina.cz/">Kombucha</a></li>
+                <li><a href="https://www.zivina.cz/">Omáčky</a></li>
+                <li><a href="https://www.zivina.cz/">Všechny produkty</a></li>
             </ul>
         </div>
         <div>
             <h4>Info</h4>
             <ul>
-                <li><a href="https://www.zivina.cz/o-nas/">O nás</a></li>
-                <li><a href="https://www.zivina.cz/blog/">Blog</a></li>
-                <li><a href="https://www.zivina.cz/recepty/">Recepty</a></li>
-                <li><a href="https://www.zivina.cz/kontakty/">Kontakt</a></li>
+                <li><a href="https://www.zivina.cz/">O nás</a></li>
+                <li><a href="https://www.zivina.cz/">Blog</a></li>
+                <li><a href="https://www.zivina.cz/">Recepty</a></li>
+                <li><a href="https://www.zivina.cz/">Kontakt</a></li>
             </ul>
         </div>
         <div>
             <h4>Zákaznický servis</h4>
             <ul>
-                <li><a href="https://www.zivina.cz/doprava-a-platba/">Doprava a&nbsp;platba</a></li>
-                <li><a href="https://www.zivina.cz/obchodni-podminky/">Obchodní podmínky</a></li>
-                <li><a href="https://www.zivina.cz/reklamace/">Reklamace</a></li>
+                <li><a href="https://www.zivina.cz/">Doprava a&nbsp;platba</a></li>
+                <li><a href="https://www.zivina.cz/">Obchodní podmínky</a></li>
+                <li><a href="https://www.zivina.cz/">Reklamace</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
         <span>&copy; 2026 Živina. Všechna práva vyhrazena.</span>
-        <a href="#" onclick="reopenCookies(); return false;" style="color: rgba(255,255,255,0.5); text-decoration: underline; font-size: 13px;">Nastavení cookies</a>
         <span>Každým soustem zdravější.</span>
     </div>
 </footer>
@@ -1472,77 +1444,6 @@
             updateDots();
         }
     });
-})();
-</script>
-
-<!-- Cookie Consent + Tracking Scripts -->
-<script>
-(function(){
-    var CONSENT_KEY = 'zivina_consent';
-
-    function getConsent() {
-        try { return localStorage.getItem(CONSENT_KEY); } catch(e) { return null; }
-    }
-
-    function setConsent(value) {
-        try { localStorage.setItem(CONSENT_KEY, value); } catch(e) {}
-    }
-
-    function loadTracking() {
-        // Meta Pixel
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '264649405164113');
-        fbq('track', 'PageView');
-
-        // GA4
-        var gs = document.createElement('script');
-        gs.async = true;
-        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-07D7V0ENNC';
-        document.head.appendChild(gs);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'G-07D7V0ENNC');
-    }
-
-    function showBanner() {
-        document.getElementById('cookieConsent').style.display = 'block';
-        document.getElementById('cookieOverlay').style.display = 'block';
-    }
-
-    function hideBanner() {
-        document.getElementById('cookieConsent').style.display = 'none';
-        document.getElementById('cookieOverlay').style.display = 'none';
-    }
-
-    // Show banner or load tracking based on previous consent
-    var consent = getConsent();
-    if (consent === 'accepted') {
-        loadTracking();
-    } else if (consent !== 'rejected') {
-        showBanner();
-    }
-
-    window.acceptCookies = function() {
-        setConsent('accepted');
-        hideBanner();
-        loadTracking();
-    };
-
-    window.rejectCookies = function() {
-        setConsent('rejected');
-        hideBanner();
-    };
-
-    window.reopenCookies = function() {
-        try { localStorage.removeItem(CONSENT_KEY); } catch(e) {}
-        showBanner();
-    };
 })();
 </script>
 
