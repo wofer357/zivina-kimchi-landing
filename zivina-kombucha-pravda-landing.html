@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <title>Kombucha Živina | Většina „kombuchy" v regálu je mrtvá. Tahle ne.</title>
+    <meta name="description" content="Nepasterovaná kombucha ze silného čajového výluhu, 4 týdny fermentace, BIO suroviny. Bez umělých aromat, bez sycení CO₂, bez kompromisů. Přesně tak, jak má opravdová kombucha chutnat. Ověřeno 1 200+ zákazníky.">
+    <style>
+        @font-face {
+            font-family: 'Albra';
+            src: url('fonts/1AlbraBold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Albra';
+            src: url('fonts/1AlbraBlack.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: italic;
+            font-display: swap;
+        }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --cream: #FBF6F0;
+            --cream-dark: #F3EDE5;
+            --pink: #d63370;
+            --pink-hover: #b82a60;
+            --pink-light: #f3c7c6;
+            --green: #008566;
+            --gold-star: #f0b852;
+            --red: #cd171a;
+            --gray: #6b6b6b;
+            --gray-light: #999;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Albra', Georgia, 'Times New Roman', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--black);
+            background: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Top bar ── */
+        .top-bar {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .top-bar strong { color: var(--pink); }
+
+        /* ── Header ── */
+        .header {
+            background: var(--white);
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e2da;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { display: inline-block; text-decoration: none; }
+        .logo img { display: block; }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .header-nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover { color: var(--pink); }
+        .header-cta {
+            background: var(--pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-family: var(--font-body);
+        }
+        .header-cta:hover { background: var(--pink-hover); }
+
+        /* ── Hero ── */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            min-height: 85vh;
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 100px;
+            width: fit-content;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .hero-badge .dot { width: 8px; height: 8px; background: var(--pink); border-radius: 50%; }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.8px;
+            margin-bottom: 20px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--pink);
+        }
+        .hero h1 .strike {
+            text-decoration: line-through;
+            text-decoration-color: var(--pink);
+            text-decoration-thickness: 4px;
+            color: var(--gray);
+        }
+        .hero-lede {
+            font-size: 18px;
+            color: var(--black);
+            max-width: 540px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .hero-lede strong { background: #fef3c7; padding: 2px 4px; font-weight: 700; }
+        .hero-desc {
+            font-size: 15px;
+            color: var(--gray);
+            max-width: 520px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .btn-pink {
+            background: var(--pink);
+            color: var(--white);
+            font-weight: 700;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 14px rgba(214, 51, 112, 0.3);
+        }
+        .btn-pink:hover {
+            background: var(--pink-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(214, 51, 112, 0.4);
+        }
+        .btn-black {
+            background: var(--black);
+            color: var(--white);
+            font-weight: 700;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-black:hover { background: #333; transform: translateY(-1px); }
+        .btn-outline {
+            color: var(--black);
+            font-weight: 600;
+            padding: 16px 28px;
+            border: 2px solid var(--black);
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: transparent;
+            font-family: var(--font-body);
+        }
+        .btn-outline:hover { background: var(--black); color: var(--white); }
+
+        .hero-proof {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid #e0d8ce;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .hero-proof-avatars {
+            display: flex;
+        }
+        .hero-proof-avatars .av {
+            width: 34px; height: 34px;
+            border-radius: 50%; border: 2px solid var(--cream);
+            background-size: cover; background-position: center;
+            margin-left: -8px;
+        }
+        .hero-proof-avatars .av:first-child { margin-left: 0; }
+        .hero-proof-avatars .av1 { background: linear-gradient(135deg, #f3c7c6, #d63370); }
+        .hero-proof-avatars .av2 { background: linear-gradient(135deg, #e9d9ec, #8a2b4d); }
+        .hero-proof-avatars .av3 { background: linear-gradient(135deg, #e1e9b5, #4a5620); }
+        .hero-proof-avatars .av4 { background: linear-gradient(135deg, #cde4d8, #2b5544); }
+        .hero-proof-text {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        .hero-proof-text strong { color: var(--black); font-weight: 700; }
+        .hero-proof-stars { color: var(--gold-star); font-size: 13px; margin-right: 4px; }
+
+        .hero-image {
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        .hero-sticker {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: var(--pink);
+            color: var(--white);
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transform: rotate(-8deg);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            font-family: var(--font-heading);
+        }
+        .hero-sticker strong { font-size: 28px; font-weight: 900; line-height: 1; }
+        .hero-sticker span { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px 40px;
+            background: var(--green);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        .trust-item { display: flex; align-items: center; gap: 6px; }
+        .trust-icon { font-size: 16px; }
+
+        /* ── Section base ── */
+        .section { padding: 100px 80px; }
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+        .section-title em { font-style: italic; color: var(--pink); }
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ── PAS: "4 lži" section ── */
+        .lies-section {
+            background: var(--black);
+            color: var(--white);
+        }
+        .lies-section .section-title { color: var(--white); }
+        .lies-section .section-title em { color: var(--pink); }
+        .lies-section .section-subtitle { color: #bbb; }
+        .lies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .lie-card {
+            background: #262325;
+            border: 1px solid #333;
+            padding: 32px 24px;
+            border-radius: 16px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .lie-card:hover { transform: translateY(-4px); border-color: var(--pink); }
+        .lie-number {
+            display: inline-flex;
+            width: 40px; height: 40px;
+            background: var(--pink);
+            color: var(--white);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .lie-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        .lie-card .lie-claim {
+            font-size: 13px;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            background: #1a1819;
+            border-left: 3px solid var(--gold-star);
+            border-radius: 4px;
+        }
+        .lie-card p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .lies-footer {
+            text-align: center;
+            margin-top: 48px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 28px 36px;
+            background: var(--pink);
+            color: var(--white);
+            border-radius: 16px;
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        /* ── Comparison (us vs supermarket) ── */
+        .comparison-section {
+            background: var(--cream);
+        }
+        .comparison-table {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+        }
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr;
+        }
+        .comparison-header > div {
+            padding: 24px;
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
+        }
+        .comparison-header .col-label { background: var(--black); color: var(--white); justify-content: flex-start; padding-left: 32px; text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-header .col-us { background: var(--pink); color: var(--white); }
+        .comparison-header .col-them { background: #e8e2da; color: var(--black); }
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr;
+            border-bottom: 1px solid #efe7dd;
+        }
+        .comparison-row:last-child { border-bottom: none; }
+        .comparison-row > div {
+            padding: 22px 24px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .comparison-row .col-label { font-weight: 700; padding-left: 32px; }
+        .comparison-row .col-us { color: var(--green); font-weight: 700; justify-content: center; text-align: center; background: rgba(0, 133, 102, 0.04); }
+        .comparison-row .col-them { color: var(--gray); justify-content: center; text-align: center; }
+        .comparison-row .col-us::before { content: '✓'; color: var(--green); font-weight: 900; margin-right: 8px; font-size: 18px; }
+        .comparison-row .col-them.negative::before { content: '✗'; color: var(--red); font-weight: 900; margin-right: 8px; font-size: 18px; }
+
+        .comparison-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .comparison-footnote {
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray-light);
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        /* ── Ambassador quote ── */
+        .ambassador-section {
+            background: var(--pink-light);
+            padding: 80px 40px;
+        }
+        .ambassador-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .ambassador-photo {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .ambassador-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .ambassador-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .ambassador-quote {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+        .ambassador-quote em {
+            background: var(--white);
+            padding: 2px 10px;
+            font-style: italic;
+            color: var(--pink);
+        }
+        .ambassador-extra {
+            font-size: 15px;
+            color: var(--black);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            opacity: 0.85;
+        }
+        .ambassador-person {
+            border-top: 1px solid rgba(0,0,0,0.15);
+            padding-top: 20px;
+        }
+        .ambassador-name {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .ambassador-role {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        .ambassador-stars { color: var(--gold-star); font-size: 20px; margin-bottom: 16px; }
+
+        /* ── The Truth (how we do it) ── */
+        .truth-section {
+            background: var(--white);
+        }
+        .truth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .truth-card {
+            padding: 36px 28px;
+            background: var(--cream);
+            border-radius: 16px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .truth-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
+        .truth-icon {
+            width: 56px; height: 56px;
+            background: var(--pink-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .truth-card h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .truth-card .truth-stat {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--pink);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .truth-card .truth-stat-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .truth-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .truth-card p strong { color: var(--black); font-weight: 700; }
+
+        /* ── Scarcity / craft batch ── */
+        .craft-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .craft-kicker {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold-star);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .craft-section h2 {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 800;
+            max-width: 780px;
+            margin: 0 auto 20px;
+            line-height: 1.15;
+        }
+        .craft-section h2 em { font-style: italic; color: var(--pink); }
+        .craft-section p {
+            font-size: 16px;
+            color: #bbb;
+            max-width: 640px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+        .craft-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 780px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+        }
+        .craft-stat strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .craft-stat span {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Discount strip ── */
+        .discount-strip {
+            background: var(--pink);
+            padding: 28px 40px;
+            text-align: center;
+        }
+
+        /* ── Products ── */
+        .products-section {
+            background: var(--cream);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+        }
+        .product-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--red);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        .product-badge.bio { background: var(--green); }
+        .product-badge.top { background: var(--gold-star); color: var(--black); }
+        .product-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+        .product-info { padding: 22px 24px 24px; }
+        .product-vibe {
+            font-size: 11px;
+            color: var(--pink);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .product-info h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .product-info .desc {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 14px;
+            line-height: 1.55;
+        }
+        .product-stock {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: 800;
+            font-family: var(--font-heading);
+        }
+        .product-price sup { font-size: 13px; font-weight: 700; position: relative; top: -4px; }
+        .product-price small {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--gray-light);
+            font-family: var(--font-body);
+        }
+        .btn-cart {
+            background: var(--pink);
+            color: var(--white);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-cart:hover { background: var(--pink-hover); }
+
+        /* ── Bundle CTA ── */
+        .bundle-section {
+            background: var(--cream-dark);
+        }
+        .bundle-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 56px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bundle-card::before {
+            content: 'NEJOBLÍBENĚJŠÍ';
+            position: absolute;
+            top: 28px;
+            right: -44px;
+            background: var(--gold-star);
+            color: var(--black);
+            font-size: 11px;
+            font-weight: 800;
+            padding: 8px 52px;
+            transform: rotate(35deg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .bundle-visual {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+        .bundle-visual img { width: 100%; height: 100%; object-fit: cover; }
+        .bundle-tag {
+            display: inline-block;
+            background: var(--pink-light);
+            color: var(--pink);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+        .bundle-card h3 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .bundle-card h3 em { color: var(--pink); font-style: italic; }
+        .bundle-card .sub {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+        .bundle-list {
+            list-style: none;
+            margin-bottom: 22px;
+            padding: 20px 0;
+            border-top: 1px solid #efe7dd;
+            border-bottom: 1px solid #efe7dd;
+        }
+        .bundle-list li {
+            font-size: 14px;
+            color: var(--black);
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .bundle-list li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 900;
+            font-size: 15px;
+        }
+        .bundle-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .bundle-price-row .original {
+            text-decoration: line-through;
+            color: var(--gray-light);
+            font-size: 18px;
+        }
+        .bundle-price-row .sale {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--pink);
+            line-height: 1;
+        }
+        .bundle-savings {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        /* ── Proof numbers / social proof bar ── */
+        .proof-section {
+            background: var(--white);
+            padding: 72px 40px;
+            border-top: 1px solid #e8e2da;
+            border-bottom: 1px solid #e8e2da;
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .proof-item {
+            padding: 0 20px;
+            border-right: 1px solid #e8e2da;
+        }
+        .proof-item:last-child { border-right: none; }
+        .proof-number {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--pink);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .proof-label {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* ── Testimonials ── */
+        .testimonials-section {
+            background: var(--cream);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonial {
+            padding: 32px;
+            background: var(--white);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-stars {
+            color: var(--gold-star);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .testimonial-headline {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+        .testimonial-body {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .testimonial-footer { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--pink-light); color: var(--pink);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 14px; flex-shrink: 0;
+        }
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .testimonial-verified {
+            font-size: 11px; color: var(--green);
+            font-weight: 600; margin-top: 2px;
+        }
+
+        /* ── FAQ ── */
+        .faq-section { background: var(--white); }
+        .faq-list { max-width: 760px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #e8e2da; }
+        .faq-item summary {
+            font-family: var(--font-heading); font-size: 18px; font-weight: 700;
+            padding: 24px 0; cursor: pointer; list-style: none;
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 20px;
+        }
+        .faq-item summary::after { content: '+'; font-size: 28px; font-weight: 300; color: var(--pink); line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item p { font-size: 15px; color: var(--gray); line-height: 1.7; padding: 0 0 24px; }
+        .faq-item p strong { color: var(--black); font-weight: 700; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        /* ── Story ── */
+        .story-section {
+            background: var(--cream);
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .story-content h2 {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+        .story-content p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .story-content p strong { color: var(--black); font-weight: 700; }
+        .story-content .btn-black { margin-top: 16px; }
+        .story-photo { display: flex; align-items: center; justify-content: center; }
+        .team-img {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* ── Final CTA ── */
+        .cta-section {
+            background: var(--pink-light);
+            text-align: center;
+            padding: 100px 40px;
+            position: relative;
+        }
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .cta-section h2 em { font-style: italic; color: var(--pink); }
+        .cta-section p {
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 36px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .cta-guarantees {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        .cta-guarantees span { display: flex; align-items: center; gap: 6px; }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 80px 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-logo { display: inline-block; margin-bottom: 16px; text-decoration: none; }
+        .footer-brand p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer h4 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .footer ul li a:hover { color: var(--white); }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* ── Mobile Sticky CTA ── */
+        .mobile-sticky-cta {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            padding: 12px 20px; background: var(--white);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 99;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content { padding: 60px 40px; }
+            .hero h1 { font-size: 42px; }
+            .hero-image { height: 400px; padding: 24px; }
+            .section { padding: 80px 40px; }
+            .lies-grid { grid-template-columns: repeat(2, 1fr); }
+            .truth-grid { grid-template-columns: 1fr; }
+            .comparison-header, .comparison-row { grid-template-columns: 1fr 1fr 1fr; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .bundle-card { grid-template-columns: 1fr; padding: 36px; }
+            .bundle-card::before { top: 20px; right: -50px; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: repeat(2, 1fr); }
+            .proof-item { border-right: none; padding: 16px 0; }
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .ambassador-grid { grid-template-columns: 1fr; gap: 32px; }
+            .ambassador-photo { max-width: 360px; margin: 0 auto; }
+            .trust-bar { gap: 20px; padding: 14px 20px; }
+            .craft-stats { grid-template-columns: 1fr; gap: 24px; }
+        }
+
+        @media (max-width: 640px) {
+            .top-bar { font-size: 11px; }
+            .header { padding: 12px 20px; }
+            .header-nav { display: none; }
+            .hero-content { padding: 40px 20px; }
+            .hero h1 { font-size: 32px; }
+            .hero-lede { font-size: 16px; }
+            .hero-desc { font-size: 14px; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .btn-pink, .btn-outline { text-align: center; justify-content: center; }
+            .hero-sticker { width: 86px; height: 86px; top: 20px; right: 20px; }
+            .hero-sticker strong { font-size: 22px; }
+            .section { padding: 60px 20px; }
+            .section-title { font-size: 30px; }
+            .lies-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .bundle-card { padding: 28px 24px; }
+            .bundle-card h3 { font-size: 26px; }
+            .bundle-price-row .sale { font-size: 32px; }
+            .ambassador-section { padding: 60px 20px; }
+            .ambassador-quote { font-size: 22px; }
+            .comparison-header > div, .comparison-row > div { padding: 14px 10px; font-size: 13px; }
+            .comparison-row .col-label { padding-left: 14px; }
+            .cta-section h2 { font-size: 30px; }
+            .cta-section { padding: 60px 20px; }
+            .craft-section { padding: 60px 20px; }
+            .craft-section h2 { font-size: 28px; }
+            .footer { padding: 40px 20px 24px; padding-bottom: 80px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .mobile-sticky-cta { display: block; }
+            .trust-bar { gap: 10px; font-size: 11px; padding: 12px 16px; }
+            .trust-bar .trust-item:nth-child(n+4) { display: none; }
+            .hero-image { height: auto; padding: 20px; }
+            .proof-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .proof-number { font-size: 32px; }
+        }
+
+        /* ── Cookie banner ── */
+        .cookie-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99998;
+            background: rgba(0,0,0,0.5);
+        }
+        .cookie-banner {
+            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 99999;
+            background: #f5f5f5; color: #222; padding: 32px 36px 28px;
+            border-radius: 16px; max-width: 620px; width: calc(100% - 32px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6;
+        }
+        .cookie-banner-content {
+            display: flex; gap: 24px; align-items: flex-start; margin-bottom: 8px;
+        }
+        .cookie-icon { flex-shrink: 0; width: 80px; height: 80px; }
+        .cookie-text { flex: 1; }
+        .cookie-text a { color: #222; font-weight: 700; text-decoration: underline; }
+        .cookie-text a:hover { color: #d63370; }
+        .cookie-banner-buttons {
+            display: flex; gap: 16px; margin-top: 20px;
+        }
+        .cookie-btn {
+            flex: 1; padding: 16px 24px; border: none; border-radius: 50px; cursor: pointer;
+            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;
+        }
+        .cookie-btn:hover { opacity: 0.85; }
+        .cookie-btn-reject { background: #1a1a1a; color: #fff; }
+        .cookie-btn-accept { background: #d63370; color: #fff; }
+        @media (max-width: 600px) {
+            .cookie-banner { padding: 24px 20px 20px; bottom: 16px; }
+            .cookie-icon { width: 56px; height: 56px; }
+            .cookie-banner-content { gap: 16px; }
+            .cookie-text { font-size: 14px; }
+            .cookie-btn { font-size: 14px; padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieOverlay" class="cookie-overlay" style="display:none;"></div>
+<div id="cookieConsent" class="cookie-banner" style="display:none;">
+    <div class="cookie-banner-content">
+        <svg class="cookie-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#222" stroke-width="3" fill="none"/>
+            <circle cx="35" cy="40" r="5" fill="#222"/><circle cx="55" cy="55" r="4" fill="#222"/>
+            <circle cx="40" cy="65" r="3.5" fill="#222"/><circle cx="65" cy="38" r="3" fill="#222"/>
+            <circle cx="58" cy="72" r="3" fill="#222"/><circle cx="28" cy="55" r="2.5" fill="#222"/>
+            <path d="M50 5 C50 5 52 12 48 14 C44 16 38 12 38 12" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M72 15 C72 15 68 22 63 21 C58 20 57 13 57 13" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M85 35 C85 35 78 37 76 42 C74 47 79 52 79 52" stroke="#222" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M25 20 C25 20 30 25 28 30" stroke="#222" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="cookie-text">
+            Cookies? Mňam! Tyhle sice nejdou sníst, ale pomohou nám vylepšit váš zážitek na našem webu. Dáte si? <a href="https://www.zivina.cz/podminky-ochrany-osobnich-udaju/" target="_blank">Více informací</a>
+        </div>
+    </div>
+    <div class="cookie-banner-buttons">
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Odmítnout</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Souhlasím</button>
+    </div>
+</div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    &#x1F381; <a href="https://www.zivina.cz/vernostni-program/" style="color: var(--pink); text-decoration: underline; font-weight: 700;">Sleva 250 Kč na první objednávku</a> &nbsp;|&nbsp; Chlazená doprava &nbsp;|&nbsp; Doprava zdarma od <strong>1 750 Kč</strong>
+</div>
+
+<!-- Header -->
+<header class="header">
+    <a href="https://www.zivina.cz" class="logo"><img src="logo-zivina.svg" alt="Živina" height="40"></a>
+    <nav class="header-nav">
+        <a href="#pravda">Pravda o kombuše</a>
+        <a href="#porovnani">Srovnání</a>
+        <a href="#produkty">Chutě</a>
+        <a href="#faq">Otázky</a>
+        <a href="#produkty" class="header-cta">OCHUTNAT &rarr;</a>
+    </nav>
+</header>
+
+<!-- Hero — pattern interrupt headline + curiosity gap -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Pravda v plechovce</div>
+        <h1>Většina „kombuchy" v regálu je <span class="strike">mrtvá</span>. <em>Tahle ne.</em></h1>
+        <p class="hero-lede">Otevřete plechovku ze supermarketu. Neucítíte nic. <strong>Protože tam nic nežije.</strong> Většina „kombuchy" v regálu je pasterovaná limonáda s aroma – cukrová voda s čajovým extraktem.</p>
+        <p class="hero-desc">Naše Živina je jiná. Nepasterovaná, 4 týdny skutečné fermentace, silný čajový výluh (96 % nápoje), BIO suroviny. Přesně tak, jak má opravdová kombucha chutnat. A ano – poznáte to hned prvním douškem.</p>
+        <div class="hero-buttons">
+            <a href="#produkty" class="btn-pink">OCHUTNAT &rarr;</a>
+            <a href="#pravda" class="btn-outline">Co se skrývá v regálu?</a>
+        </div>
+        <div class="hero-proof">
+            <div class="hero-proof-avatars">
+                <div class="av av1"></div>
+                <div class="av av2"></div>
+                <div class="av av3"></div>
+                <div class="av av4"></div>
+            </div>
+            <div class="hero-proof-text">
+                <span class="hero-proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4,8/5</strong> na Slevomatu (493 recenzí) &middot; <strong>93 %</strong> doporučení na Heureka &middot; <strong>45 000+</strong> fanoušků na Instagramu
+            </div>
+        </div>
+    </div>
+    <div class="hero-image">
+        <div class="hero-sticker">
+            <strong>4×</strong>
+            <span>týdny<br>kvašení</span>
+        </div>
+        <img src="images/kombucha/levandule-hero.webp" alt="Nepasterovaná kombucha Živina ze silného čajového výluhu">
+    </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+    <div class="trust-item"><span class="trust-icon">&#x1F9EA;</span><span>Nepasterovaná</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x23F3;</span><span>4&nbsp;týdny fermentace</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F33F;</span><span>BIO suroviny</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F6AB;</span><span>Bez aromat &amp; sycení</span></div>
+    <div class="trust-item"><span class="trust-icon">&#x1F1E8;&#x1F1FF;</span><span>Česká dílna</span></div>
+</section>
+
+<!-- PAS: The 4 lies of supermarket kombucha -->
+<section class="section lies-section" id="pravda">
+    <div class="section-header">
+        <div style="display: inline-block; background: var(--pink); color: var(--white); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 100px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">&#x26A0; Otevřený dopis z&nbsp;regálu</div>
+        <h2 class="section-title">4 věci, které vám o „kombuše" z regálu <em>neřeknou</em></h2>
+        <p class="section-subtitle">Jsme výrobci. Známe průmysl zevnitř. A už nás nebaví se dívat, jak se prodává mrtvá limonáda pod hlavičkou probiotického nápoje. Tohle je pravda, kterou v&nbsp;reklamě neuvidíte.</p>
+    </div>
+
+    <div class="lies-grid">
+        <div class="lie-card">
+            <div class="lie-number">1</div>
+            <h3>Pasterovaná = mrtvá</h3>
+            <div class="lie-claim">„100 % přírodní fermentovaný čaj"</div>
+            <p>Většina kombuch v regálu projde pasterací při 65–75 °C. <strong style="color: var(--white);">Všechno živé v ní se zabije.</strong> Zůstane jen chuť a cukr. Proč? Aby vydržela 12 měsíců na regálu při pokojové teplotě.</p>
+        </div>
+
+        <div class="lie-card">
+            <div class="lie-number">2</div>
+            <h3>Fermentace 2 dny</h3>
+            <div class="lie-claim">„Tradiční fermentace"</div>
+            <p>Opravdová kombucha kvasí <strong style="color: var(--white);">3–4 týdny</strong>. Průmyslovci to zkracují na 48–72 hodin. Chuť pak sedí jen na cukru a aromatu. Kyseliny a komplexita, které vznikají v pozdní fermentaci? Ty už v lahvi nenajdete.</p>
+        </div>
+
+        <div class="lie-card">
+            <div class="lie-number">3</div>
+            <h3>Uměle dosycená CO<sub>2</sub></h3>
+            <div class="lie-claim">„Přirozeně perlivá"</div>
+            <p>Pasterace zabije kultury, které by perlení vytvořily. Takže se <strong style="color: var(--white);">dodatečně dotlakuje CO<sub>2</sub></strong> – jako u coly. Perlení kope, lepí na jazyku, po doušku pálí. Přirozené bubliny jsou jemnější a šimrají.</p>
+        </div>
+
+        <div class="lie-card">
+            <div class="lie-number">4</div>
+            <h3>Arómata, ne byliny</h3>
+            <div class="lie-claim">„S příchutí bezu"</div>
+            <p>Když vidíte „příchuť" nebo „aroma" v&nbsp;složení, <strong style="color: var(--white);">bylinu z Krkonoš tam nečekejte.</strong> Je to většinou průmyslové aroma v&nbsp;lahvičce. Rychlé. Levné. Uniformní. A chutná přesně tak.</p>
+        </div>
+    </div>
+
+    <div class="lies-footer">
+        &bdquo;Kombucha" z&nbsp;regálu je limonáda s&nbsp;aroma, která se jmenuje po&nbsp;původním nápoji. Mňam? Spíš ne. 🙃
+    </div>
+</section>
+
+<!-- Ambassador / authority quote -->
+<section class="ambassador-section">
+    <div class="ambassador-grid">
+        <div class="ambassador-photo">
+            <img src="images/kombucha/recenze-1.jpg" alt="Zuzana Fryaufová – podnikatelka a&nbsp;fanoušek kombuchy Živina">
+        </div>
+        <div>
+            <div class="ambassador-badge">&#x2B50; Říkají o&nbsp;nás</div>
+            <div class="ambassador-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="ambassador-quote">„Kombucha od Živiny mi nejvíc připomíná kombuchu mého dětství – <em>tu opravdovou, živou, neslazenou.</em>"</p>
+            <p class="ambassador-extra">Každý z&nbsp;rodiny máme svou oblíbenou příchuť, praktické recyklovatelné černé plechovky, které milujeme všichni bez rozdílu. Plníme jich lednici každý týden.</p>
+            <div class="ambassador-person">
+                <div class="ambassador-name">Zuzana Fryaufová</div>
+                <div class="ambassador-role">podnikatelka, moderátorka, zakladatelka podcastu Inbox</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison table -->
+<section class="section comparison-section" id="porovnani">
+    <div class="section-header">
+        <h2 class="section-title">Kombucha Živina vs. <em>kombucha z&nbsp;regálu</em></h2>
+        <p class="section-subtitle">Vedle sebe. Bez marketingu, bez kliček, bez kudrlinek. Jen fakta o&nbsp;tom, co v&nbsp;plechovce skutečně je.</p>
+    </div>
+
+    <div class="comparison-table">
+        <div class="comparison-header">
+            <div class="col-label">Parametr</div>
+            <div class="col-us">
+                <img src="logo-zivina.svg" alt="Živina" style="height: 22px; filter: brightness(0) invert(1);">
+            </div>
+            <div class="col-them">Průmyslová „kombucha"</div>
+        </div>
+
+        <div class="comparison-row">
+            <div class="col-label">Fermentace</div>
+            <div class="col-us">4 týdny</div>
+            <div class="col-them negative">48–72 hodin</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Pasterace</div>
+            <div class="col-us">Ne — zůstávají živé kultury</div>
+            <div class="col-them negative">Ano — kultury zničené teplem</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Čajový výluh</div>
+            <div class="col-us">96&nbsp;% — silný, poctivý</div>
+            <div class="col-them negative">Nízký — často jen extrakt</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Perlení</div>
+            <div class="col-us">Přirozené z&nbsp;fermentace</div>
+            <div class="col-them negative">Dodatečně dosycené CO<sub>2</sub></div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Chuť</div>
+            <div class="col-us">Cítíte čaj i&nbsp;bylinu</div>
+            <div class="col-them negative">Aroma z&nbsp;lahvičky</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Postbiotika</div>
+            <div class="col-us">Ano — vznikají při&nbsp;kvašení</div>
+            <div class="col-them negative">Zničená pasterací</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Skladování</div>
+            <div class="col-us">V&nbsp;chladu, do&nbsp;7&nbsp;°C</div>
+            <div class="col-them negative">Na&nbsp;regále při&nbsp;pokojové teplotě</div>
+        </div>
+        <div class="comparison-row">
+            <div class="col-label">Obsah cukru</div>
+            <div class="col-us">3,6&nbsp;g&nbsp;/ 100&nbsp;ml</div>
+            <div class="col-them negative">7–11&nbsp;g&nbsp;/ 100&nbsp;ml</div>
+        </div>
+    </div>
+
+    <div class="comparison-cta">
+        <a href="#produkty" class="btn-pink">To si dám opravdovou &rarr;</a>
+    </div>
+    <p class="comparison-footnote">Porovnání je průměr běžných průmyslových kombuch z&nbsp;českého trhu (etikety, veřejně dostupné údaje). Vaše konkrétní značka se může lišit – přečtěte si složení, je to osvěta.</p>
+</section>
+
+<!-- The Truth / Proč Živina -->
+<section class="section truth-section">
+    <div class="section-header">
+        <h2 class="section-title">Takhle to děláme <em>my</em></h2>
+        <p class="section-subtitle">Tři věci, které nás dělí od průmyslu. Žádné zkratky, žádné přidatné látky, žádné drama. Jen čas, čaj a&nbsp;trpělivost.</p>
+    </div>
+
+    <div class="truth-grid">
+        <div class="truth-card">
+            <div class="truth-icon">&#x23F3;</div>
+            <div class="truth-stat">4 týdny</div>
+            <div class="truth-stat-label">Fermentace</div>
+            <h3>Trpělivost se chutná</h3>
+            <p>Necháme kultury <strong>4 týdny pracovat</strong>. Cukr se promění na organické kyseliny a polyfenoly, chuť se vrství, dozvuk se prohlubuje. To, co si průmysl odpustí kvůli cashflow, my si dopřejeme kvůli chuti.</p>
+        </div>
+
+        <div class="truth-card">
+            <div class="truth-icon">&#x1F375;</div>
+            <div class="truth-stat">96 %</div>
+            <div class="truth-stat-label">Čajový výluh</div>
+            <h3>Nejdřív pořádný čaj</h3>
+            <p>Každá chuť má <strong>svůj konkrétní čaj</strong>: Oolong k&nbsp;levanduli, Pu-erh k&nbsp;citronce, zelený k&nbsp;jasmínu a&nbsp;bazalce. A&nbsp;dávkujeme ho hodně. Aby čaj ve&nbsp;sklenici poznal i&nbsp;sommelier, ne&nbsp;jen nutriční etiketa.</p>
+        </div>
+
+        <div class="truth-card">
+            <div class="truth-icon">&#x1F9EA;</div>
+            <div class="truth-stat">0 °C–7 °C</div>
+            <div class="truth-stat-label">Chlazená cesta</div>
+            <h3>Živá od&nbsp;nás až&nbsp;k&nbsp;vám</h3>
+            <p>Nepasterujeme. Posíláme <strong>chlazenou přepravou</strong>, abychom zachovali kultury a&nbsp;jemnost chuti. Je to dráž a&nbsp;složitější – ale kombucha, která není živá, je jen čajová limonáda. A&nbsp;těch máte všude dost.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Craft scarcity — honest scarcity hook -->
+<section class="craft-section">
+    <div class="craft-kicker">Řemeslo, ne&nbsp;výroba</div>
+    <h2>Neděláme kombuchu na&nbsp;rok dopředu. <em>Děláme ji&nbsp;teď.</em></h2>
+    <p>Každá várka zraje v&nbsp;naší dílně v&nbsp;Přerově 28 dní. Pak se stáčí a&nbsp;chlazená letí k&nbsp;vám – čerstvá, živá, přesně taková, jakou jsme si představovali. Proto je jí pořád jen <strong style="color:var(--white);">omezené množství</strong>. A proto pijete něco, co v supermarketu nenajdete.</p>
+
+    <div class="craft-stats">
+        <div class="craft-stat">
+            <strong>4</strong>
+            <span>Unikátní chutě</span>
+        </div>
+        <div class="craft-stat">
+            <strong>100 %</strong>
+            <span>Česká výroba</span>
+        </div>
+        <div class="craft-stat">
+            <strong>0</strong>
+            <span>Aroma &amp; barviv</span>
+        </div>
+    </div>
+</section>
+
+<!-- Discount strip -->
+<section class="discount-strip">
+    <a href="https://www.zivina.cz/vernostni-program/" style="color: var(--white); text-decoration: none; display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <span style="font-size: 28px;">&#x1F381;</span>
+        <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 800;">Získejte slevu 250 Kč na&nbsp;první objednávku</span>
+        <span style="background: var(--white); color: var(--pink); font-weight: 700; font-size: 13px; padding: 8px 20px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Zaregistrovat se &rarr;</span>
+    </a>
+</section>
+
+<!-- Products — 4 chutě -->
+<section class="section products-section" id="produkty">
+    <div class="section-header">
+        <h2 class="section-title">Vyberte si <em>svou pravdu</em></h2>
+        <p class="section-subtitle">Čtyři chutě, čtyři čaje, čtyři nálady. 74,90&nbsp;Kč za 330&nbsp;ml. Jsou taky v&nbsp;mixu 24&nbsp;ks – to když si nemůžete vybrat.</p>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="product-badge top">&#x2B50; Bestseller</div>
+            <div class="product-image" style="background: #e9d9ec;">
+                <img src="images/kombucha/jasmin-front.webp" alt="Kombucha Jasmín 330 ml" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-vibe">Jemná &middot; elegantní</div>
+                <h3>Jasmín</h3>
+                <p class="desc">Zelený čaj s&nbsp;květy jasmínu (min.&nbsp;90&nbsp;%). Svěží, jemně květinová, s&nbsp;hebkým závěrem. Vstupní brána do&nbsp;opravdové kombuchy.</p>
+                <div class="product-stock">&#10003; skladem &middot; chlazená doprava</div>
+                <div class="product-bottom">
+                    <div class="product-price">74<sup>,90</sup> Kč <small>/ 330&nbsp;ml</small></div>
+                    <a href="https://www.zivina.cz/kombucha-jasmin-330-ml/" class="btn-cart">&#x1F6D2; To si dám</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-badge bio">BIO</div>
+            <div class="product-image" style="background: #f3c7c6;">
+                <img src="images/kombucha/levandule-front.webp" alt="Kombucha Levandule 330 ml" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-vibe">Aromatická &middot; květinová</div>
+                <h3>Levandule</h3>
+                <p class="desc">Polozelený Oolong s&nbsp;<strong>BIO levandulí</strong> z&nbsp;Levandulového statku Bezděkov. Žádné aroma – skutečné květy. Poznáte okamžitě.</p>
+                <div class="product-stock">&#10003; skladem &middot; chlazená doprava</div>
+                <div class="product-bottom">
+                    <div class="product-price">74<sup>,90</sup> Kč <small>/ 330&nbsp;ml</small></div>
+                    <a href="https://www.zivina.cz/kombucha-levandule/" class="btn-cart">&#x1F6D2; To si dám</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background: #e1e9b5;">
+                <img src="images/kombucha/citron-front.webp" alt="Kombucha Citronová tráva 330 ml" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-vibe">Svěží &middot; citrusová</div>
+                <h3>Citronová tráva</h3>
+                <p class="desc">Černý Pu-erh a&nbsp;citronová tráva. Zemitá hloubka, lehký citrus, medový dozvuk. Skvělá po&nbsp;sportu i&nbsp;k&nbsp;obědu.</p>
+                <div class="product-stock">&#10003; skladem &middot; chlazená doprava</div>
+                <div class="product-bottom">
+                    <div class="product-price">74<sup>,90</sup> Kč <small>/ 330&nbsp;ml</small></div>
+                    <a href="https://www.zivina.cz/kombucha-citronova-trava-330-ml/" class="btn-cart">&#x1F6D2; To si dám</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background: #cde4d8;">
+                <img src="images/kombucha/bazalka-front.webp" alt="Kombucha Bazalka posvátná 330 ml" loading="lazy">
+            </div>
+            <div class="product-info">
+                <div class="product-vibe">Plná &middot; bylinná</div>
+                <h3>Bazalka posvátná</h3>
+                <p class="desc">Zelený čaj s&nbsp;bazalkou posvátnou (tulsi, 96&nbsp;%). Výrazná, lehce kořenitá, dlouhý dozvuk. Pro&nbsp;ty, kdo to&nbsp;chtějí naplno.</p>
+                <div class="product-stock">&#10003; skladem &middot; chlazená doprava</div>
+                <div class="product-bottom">
+                    <div class="product-price">74<sup>,90</sup> Kč <small>/ 330&nbsp;ml</small></div>
+                    <a href="https://www.zivina.cz/kombucha-bazalka-posvatna-330-ml/" class="btn-cart">&#x1F6D2; To si dám</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bundle / featured offer -->
+<section class="section bundle-section">
+    <div class="section-header">
+        <h2 class="section-title">Váháte? <em>Zkuste všechny</em></h2>
+        <p class="section-subtitle">Nejlepší způsob, jak najít „tu vaši". Každou chuť můžete ochutnat několikrát po&nbsp;sobě – pak už víte.</p>
+    </div>
+
+    <div class="bundle-card">
+        <div class="bundle-visual">
+            <img src="images/kombucha/jasmin-lifestyle.webp" alt="Kombucha mix 24 ks – všechny 4 chutě">
+        </div>
+        <div>
+            <span class="bundle-tag">&#x1F4E6; Mix 24&nbsp;ks</span>
+            <h3>Kombucha <em>mix 24 plechovek</em></h3>
+            <p class="sub">Všechny čtyři chutě dohromady. Měsíc zásob pro&nbsp;dva, víkend pro&nbsp;partu, lednice připravená na&nbsp;každý scénář.</p>
+
+            <ul class="bundle-list">
+                <li>6× Jasmín + 6× Levandule + 6× Citronka + 6× Bazalka</li>
+                <li>Ušetříte <strong>198,60&nbsp;Kč</strong> oproti kusovému nákupu</li>
+                <li>Chlazená doprava zdarma &mdash; balíček překračuje 1&nbsp;750&nbsp;Kč</li>
+                <li>Garance vrácení: nezachutná-li, vraťte zbytek &mdash; peníze nazpět</li>
+            </ul>
+
+            <div class="bundle-price-row">
+                <span class="original">1 797,60&nbsp;Kč</span>
+                <span class="sale">1 599 Kč</span>
+            </div>
+            <div class="bundle-savings">&#10003; 66,60&nbsp;Kč za plechovku &middot; ušetříte 198,60&nbsp;Kč</div>
+
+            <a href="https://www.zivina.cz/kombucha-mix-prichuti-330-ml--24-ks/" class="btn-pink" style="width: 100%; justify-content: center;">Chci mix 24&nbsp;ks &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- Social proof number bar -->
+<section class="proof-section">
+    <div class="proof-grid">
+        <div class="proof-item">
+            <div class="proof-number">4,8<span style="font-size: 22px; color: var(--gray);">/5</span></div>
+            <div class="proof-label">493 recenzí na&nbsp;Slevomatu</div>
+        </div>
+        <div class="proof-item">
+            <div class="proof-number">93&nbsp;%</div>
+            <div class="proof-label">doporučují na&nbsp;Heureka.cz</div>
+        </div>
+        <div class="proof-item">
+            <div class="proof-number">300+</div>
+            <div class="proof-label">prodejen po&nbsp;celé ČR</div>
+        </div>
+        <div class="proof-item">
+            <div class="proof-number">45&nbsp;000+</div>
+            <div class="proof-label">fanoušků na&nbsp;Instagramu</div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials-section">
+    <div class="section-header">
+        <h2 class="section-title">Co říkají ti, kdo ji <em>už pijou</em></h2>
+        <p class="section-subtitle">Vybrali jsme tři recenze, které vystihují, proč&nbsp;u&nbsp;nás zůstávají. Všechny jsou od&nbsp;ověřených zákazníků.</p>
+    </div>
+
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-headline">Konečně kombucha, která chutná jako kombucha</div>
+            <p class="testimonial-body">Vyzkoušela jsem snad šest značek z regálu a&nbsp;všechny jsou sladké a&nbsp;ploché. Živina má čajovou hloubku a&nbsp;přirozeně jemné perlení. Poznala jsem rozdíl hned první douškem. Teď si 24 ks objednávám pravidelně.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">V</div>
+                <div>
+                    <div class="testimonial-name">Veronika K.</div>
+                    <div class="testimonial-verified">&#x2705; Ověřená zákaznice &middot; Praha</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-headline">Manžel ji&nbsp;má místo piva</div>
+            <p class="testimonial-body">Kupujeme od prvního balíku Mix 24. Každý má svou oblíbenou – já bazalku, manžel levanduli, děti citronku. Nikdy jsme si neuvědomili, jak fádní je průmyslová limča, dokud jsme nevyzkoušeli tohle. Mňam!</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">M</div>
+                <div>
+                    <div class="testimonial-name">Monika S.</div>
+                    <div class="testimonial-verified">&#x2705; Ověřená zákaznice &middot; Brno</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="testimonial-headline">Dělám si ji doma – tahle je&nbsp;stejně dobrá</div>
+            <p class="testimonial-body">Vařím kombuchu doma 5 let, takže jsem hodně vybíravý. Tahle je jedna z&nbsp;mála, které jsem dal druhou šanci – a&nbsp;zůstal jsem. Poznáte poctivou fermentaci od&nbsp;rychlého průmyslu. Je to vidět i&nbsp;cítit.</p>
+            <div class="testimonial-footer">
+                <div class="testimonial-avatar">J</div>
+                <div>
+                    <div class="testimonial-name">Jan R.</div>
+                    <div class="testimonial-verified">&#x2705; Ověřený zákazník &middot; Olomouc</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="section-header">
+        <h2 class="section-title">Než si dáte první doušek &mdash; <em>časté otázky</em></h2>
+        <p class="section-subtitle">Dotazy, které nejčastěji dostáváme. A&nbsp;upřímné odpovědi &mdash; bez marketingových kliček.</p>
+    </div>
+    <div class="faq-list">
+        <details class="faq-item">
+            <summary>Jak poznám doma, že je kombucha „živá"?</summary>
+            <p>Tři signály: <strong>chlazená přeprava i&nbsp;skladování</strong> (musí být), <strong>malé vločky na&nbsp;dně</strong> (přirozená stopa kultur) a&nbsp;<strong>jemné perlení, ne&nbsp;ostré bubliny</strong> (od&nbsp;dodatečného CO<sub>2</sub>). U&nbsp;živé kombuchy taky cítíte složitost chuti, ne&nbsp;jen sladkost a&nbsp;kyselost.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Proč je dražší než v&nbsp;supermarketu?</summary>
+            <p>Protože ji <strong>neděláme ve&nbsp;velkém na&nbsp;rok dopředu</strong>. 4 týdny fermentace, BIO suroviny, silný čajový výluh (96&nbsp;%), chlazená přeprava. Každá z&nbsp;těchto věcí stojí víc než pasterace při 70&nbsp;°C a&nbsp;pár dní kvašení. Ale je to taky důvod, proč to chutná jinak.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Je kombucha alkoholická?</summary>
+            <p>Obsahuje <strong>stopové množství přirozeně vzniklého alkoholu</strong> – 0,5 až 1,2&nbsp;%. To vzniká při&nbsp;fermentaci (podobně jako u&nbsp;kefíru). Pro&nbsp;děti, těhotné ani řidiče vhodná není, dospělým nabízí svěží alternativu k&nbsp;limonádám a&nbsp;vínu.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Musím ji opravdu chladit?</summary>
+            <p>Ano. Fermentace v&nbsp;ní pokračuje i&nbsp;po&nbsp;stočení – chlad (<strong>do&nbsp;7&nbsp;°C</strong>) ji drží v&nbsp;klidu. V&nbsp;teple by zkyslela a&nbsp;nafoukla by se. V&nbsp;chladu zůstává chuť čistá a&nbsp;perlení akorát. Proto ji posíláme v&nbsp;chlazeném obalu.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Proč plechovka, a&nbsp;ne láhev?</summary>
+            <p>Plechovka <strong>chrání před světlem i&nbsp;kyslíkem</strong>, zvládá přirozený tlak z&nbsp;fermentace, rychle se chladí a&nbsp;donekonečna recykluje. Lehčí na&nbsp;dopravu, bezpečnější, udržitelnější. A&nbsp;matná černá plechovka vypadá v&nbsp;lednici dobře.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Kdy dorazí objednávka a jak je zabalena?</summary>
+            <p>Odesíláme <strong>do 24 hodin</strong> v&nbsp;chlazeném izolovaném balení s&nbsp;gelovou vložkou. Doprava zdarma při&nbsp;objednávce nad&nbsp;<strong>1&nbsp;750&nbsp;Kč</strong>. Chlazený rozvoz po&nbsp;celé ČR.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Co když mi nezachutná?</summary>
+            <p>Napište nám na&nbsp;<a href="mailto:info@zivina.cz" style="color: var(--pink); text-decoration: underline;">info@zivina.cz</a>. <strong>Zbytek balíku vrátíme za&nbsp;peníze zpět</strong>. Kombucha není pro&nbsp;každého hned napoprvé – a&nbsp;my to respektujeme.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Kde ještě najdu Živinu?</summary>
+            <p>Na&nbsp;Rohlíku, Košíku, Sklizeno, Delmartu, Scuku, Wolt, v&nbsp;Lékárně.cz a&nbsp;ve&nbsp;více než <strong>300 kamenných prodejnách</strong> po&nbsp;celé ČR. Nejjednodušší ale je objednat si přímo od&nbsp;nás – dorazí čerstvá a&nbsp;chlazená přímo z&nbsp;dílny.</p>
+        </details>
+    </div>
+</section>
+
+<!-- Story -->
+<section class="section story-section">
+    <div class="story-grid">
+        <div class="story-content">
+            <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
+            <h2>Děláme potraviny, jaké bychom chtěli jíst sami</h2>
+            <p>Začalo to kimchi. Pak přišla kombucha, omáčky, pesta. Vždycky se stejnou otázkou: <strong>proč se většina potravin v&nbsp;regálu dělá jinak, než bychom je dělali doma?</strong></p>
+            <p>Kombucha nás učila trpělivosti. Čtyři týdny čekat, než se něco dostane ze sklenice do&nbsp;plechovky, se zdá nepraktické. Ale přesně proto to chutná jinak. Chvíli nám trvalo vyladit recepturu. Pak bylinky. Pak papírovou etiketu, kterou lze recyklovat s&nbsp;plechovkou. <strong>Žádné kompromisy. Mňam!</strong></p>
+            <a href="https://www.zivina.cz/o-nas/" class="btn-black">Náš příběh</a>
+        </div>
+        <div class="story-photo">
+            <img src="https://cdn.myshoptet.com/usr/www.zivina.cz/user/documents/igt_assets/images/our_story/our_team.jpg" alt="Tým Živiny v&nbsp;Přerově" class="team-img" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section">
+    <img src="logo-zivina.svg" alt="Živina" style="height: 40px; margin-bottom: 20px;">
+    <h2>Dejte si <em>opravdovou</em> kombuchu.</h2>
+    <p>Nepasterovaná. 4&nbsp;týdny fermentace. Chlazená cesta k&nbsp;vám.<br>Jeden doušek a&nbsp;už&nbsp;rozumíte, o&nbsp;čem mluvíme.</p>
+    <a href="#produkty" class="btn-pink" style="padding: 18px 44px; font-size: 16px;">Ochutnat opravdovou &rarr;</a>
+
+    <div class="cta-guarantees">
+        <span>&#x1F9EA; Živé kultury</span>
+        <span>&#x23F3; 4&nbsp;týdny fermentace</span>
+        <span>&#x1F69A; Chlazená doprava</span>
+        <span>&#x1F3AF; Garance vrácení</span>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08);">
+        <a href="https://www.zivina.cz/vernostni-program/" class="btn-black" style="padding: 18px 44px; font-size: 16px;">&#x1F381; ZÍSKEJTE SLEVU 250 Kč NA PRVNÍ OBJEDNÁVKU &rarr;</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <span class="footer-logo"><img src="logo-zivina.svg" alt="Živina" style="height: 40px;"></span>
+            <p>Fermentované potraviny pro&nbsp;zdravější život. Řemeslná výroba v&nbsp;Přerově s&nbsp;láskou k&nbsp;poctivým postupům.</p>
+        </div>
+        <div>
+            <h4>Produkty</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/kimchi/">Kimchi</a></li>
+                <li><a href="https://www.zivina.cz/kombucha/">Kombucha</a></li>
+                <li><a href="https://www.zivina.cz/omacky-na-vareni/">Omáčky</a></li>
+                <li><a href="https://www.zivina.cz/produkty/">Všechny produkty</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Info</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/o-nas/">O nás</a></li>
+                <li><a href="https://www.zivina.cz/blog/">Blog</a></li>
+                <li><a href="https://www.zivina.cz/recepty/">Recepty</a></li>
+                <li><a href="https://www.zivina.cz/kontakty/">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Zákaznický servis</h4>
+            <ul>
+                <li><a href="https://www.zivina.cz/doprava-a-platba/">Doprava a platba</a></li>
+                <li><a href="https://www.zivina.cz/obchodni-podminky/">Obchodní podmínky</a></li>
+                <li><a href="https://www.zivina.cz/reklamace/">Reklamace</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Živina. Všechna práva vyhrazena.</span>
+        <a href="#" onclick="reopenCookies(); return false;" style="color: rgba(255,255,255,0.5); text-decoration: underline; font-size: 13px;">Nastavení cookies</a>
+        <span>Každým soustem zdravější.</span>
+    </div>
+</footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <a href="#produkty" class="btn-pink" style="width: 100%; justify-content: center; padding: 14px 24px; font-size: 15px;">OCHUTNAT OPRAVDOVOU &rarr;</a>
+</div>
+
+<!-- Cookie Consent + Tracking Scripts -->
+<script>
+(function(){
+    var CONSENT_KEY = 'zivina_consent';
+
+    function getConsent() {
+        try { return localStorage.getItem(CONSENT_KEY); } catch(e) { return null; }
+    }
+
+    function setConsent(value) {
+        try { localStorage.setItem(CONSENT_KEY, value); } catch(e) {}
+    }
+
+    function loadTracking() {
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '264649405164113');
+        fbq('track', 'PageView');
+
+        // GA4
+        var gs = document.createElement('script');
+        gs.async = true;
+        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-07D7V0ENNC';
+        document.head.appendChild(gs);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-07D7V0ENNC');
+    }
+
+    function showBanner() {
+        document.getElementById('cookieConsent').style.display = 'block';
+        document.getElementById('cookieOverlay').style.display = 'block';
+    }
+
+    function hideBanner() {
+        document.getElementById('cookieConsent').style.display = 'none';
+        document.getElementById('cookieOverlay').style.display = 'none';
+    }
+
+    var consent = getConsent();
+    if (consent === 'accepted') {
+        loadTracking();
+    } else if (consent !== 'rejected') {
+        showBanner();
+    }
+
+    window.acceptCookies = function() {
+        setConsent('accepted');
+        hideBanner();
+        loadTracking();
+    };
+
+    window.rejectCookies = function() {
+        setConsent('rejected');
+        hideBanner();
+    };
+
+    window.reopenCookies = function() {
+        try { localStorage.removeItem(CONSENT_KEY); } catch(e) {}
+        showBanner();
+    };
+})();
+</script>
+
+</body>
+</html>
